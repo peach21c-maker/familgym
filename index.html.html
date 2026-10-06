@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#111318" />
+  <title>FAMILGYM v4 — Our Family AI</title>
+  <style>
+:root{
+  --bg:#0d0f12;--panel:#14171c;--panel2:#1a1e24;--line:#282d35;--text:#f4f6f8;--muted:#9aa3ad;
+  --accent:#d9ff5b;--accent2:#bdf63e;--user:#262b33;--danger:#ff6b6b;--shadow:0 24px 80px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,"Noto Sans KR",sans-serif}
+button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.app-shell{height:100dvh;display:grid;grid-template-columns:278px 1fr;overflow:hidden}.sidebar{background:#101216;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:18px 14px;z-index:20}.brand-wrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;border:0;background:none;color:var(--text);padding:6px;cursor:pointer;text-align:left}.brand-mark,.hero-logo{display:grid;place-items:center;background:var(--accent);color:#101210;font-weight:900}.brand-mark{width:38px;height:38px;border-radius:12px;font-size:20px}.brand b{display:block;font-size:15px;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.new-chat{margin:21px 4px 18px;background:var(--text);color:#111;border:0;border-radius:13px;height:45px;font-weight:800;cursor:pointer}.new-chat:hover{background:#fff}.new-chat span{font-size:19px;margin-right:6px}.side-section{padding:3px 4px}.side-label{font-size:11px;color:#737c87;font-weight:800;letter-spacing:.08em;margin:10px 8px}.member-list{display:grid;gap:4px}.member,.side-action{width:100%;height:43px;border:0;border-radius:11px;background:transparent;color:#cdd3da;display:flex;align-items:center;gap:10px;padding:0 12px;cursor:pointer}.member:hover,.side-action:hover{background:var(--panel2)}.member.active{background:#20252c;color:#fff}.member span:first-child{font-size:17px}.side-spacer{flex:1}.side-action{position:relative}.side-action>span:first-child{width:22px}.toggle{margin-left:auto;width:34px;height:20px;border-radius:999px;background:#383f48;position:relative}.toggle:after{content:"";position:absolute;width:14px;height:14px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.18s}.toggle.on{background:var(--accent)}.toggle.on:after{left:17px;background:#111}.status-card{margin:10px 5px 0;padding:11px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:10px}.status-dot{width:8px;height:8px;border-radius:50%;background:#f5b942;box-shadow:0 0 0 4px rgba(245,185,66,.1)}.status-dot.live{background:#67dd80;box-shadow:0 0 0 4px rgba(103,221,128,.1)}.status-card b{display:block;font-size:11px}.status-card small{display:block;font-size:10px;color:var(--muted);margin-top:2px}.main{min-width:0;display:grid;grid-template-rows:60px 1fr auto;background:radial-gradient(circle at 70% -30%,rgba(217,255,91,.06),transparent 37%),var(--bg)}.topbar{height:60px;border-bottom:1px solid rgba(40,45,53,.8);display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(13,15,18,.86);backdrop-filter:blur(12px);z-index:10}.top-title{display:flex;align-items:center;gap:10px}.top-title b{font-size:14px;letter-spacing:.06em}.top-title span{font-size:10px;color:#151713;background:var(--accent);padding:4px 8px;border-radius:999px;font-weight:900}.icon-btn{width:38px;height:38px;border:0;border-radius:11px;background:transparent;color:#d9dee4;font-size:20px;cursor:pointer}.icon-btn:hover{background:var(--panel2)}.menu-btn,.mobile-close{display:none}.chat{overflow-y:auto;padding:34px max(24px,calc((100% - 840px)/2)) 18px;scroll-behavior:smooth}.hero{min-height:calc(100dvh - 260px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 0}.hero-logo{width:58px;height:58px;border-radius:18px;font-size:31px;box-shadow:0 12px 36px rgba(217,255,91,.13)}.hero h1{font-size:34px;letter-spacing:-.04em;margin:20px 0 8px}.hero h1 span{color:var(--accent)}.hero p{color:var(--muted);font-size:14px;margin:0 0 28px}.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:min(620px,100%)}.suggestions button{min-height:54px;text-align:left;border:1px solid var(--line);background:#13161a;color:#dfe4e9;border-radius:14px;padding:12px 14px;cursor:pointer}.suggestions button:hover{border-color:#424a56;background:#181c21}.messages{display:grid;gap:20px;padding-bottom:12px}.message{display:flex;gap:12px;max-width:100%}.message.user{justify-content:flex-end}.avatar{flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:13px;background:var(--accent);color:#101210}.bubble{max-width:min(720px,85%);border-radius:18px;padding:12px 15px;line-height:1.62;font-size:14px;white-space:pre-wrap;word-break:break-word}.assistant .bubble{background:transparent;padding-top:4px}.user .bubble{background:var(--user);border:1px solid #303640}.meta-row{font-size:10px;color:#737d88;margin-top:8px;display:flex;gap:8px}.verified{color:#bfe956}.typing{display:inline-flex;gap:5px;padding:8px 0}.typing i{width:6px;height:6px;border-radius:50%;background:#89939e;animation:bounce 1s infinite}.typing i:nth-child(2){animation-delay:.14s}.typing i:nth-child(3){animation-delay:.28s}@keyframes bounce{0%,70%,100%{transform:translateY(0);opacity:.5}35%{transform:translateY(-5px);opacity:1}}.composer-wrap{padding:8px max(24px,calc((100% - 840px)/2)) max(13px,env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(13,15,18,0),#0d0f12 18%)}.accuracy-chip{font-size:10px;color:#aeb7c0;margin:0 10px 7px}.composer{display:flex;align-items:flex-end;gap:9px;border:1px solid #333944;background:#171a1f;border-radius:18px;padding:9px 10px;box-shadow:0 14px 45px rgba(0,0,0,.25)}.composer:focus-within{border-color:#596271}.reasoning-select{flex:0 0 auto;height:38px;min-width:88px;max-width:104px;border:1px solid #363d47;border-radius:12px;background:#20242a;color:#eef1f4;padding:0 28px 0 10px;outline:none;font-size:12px;font-weight:900;cursor:pointer;color-scheme:dark}.reasoning-select[data-mode="master"]{border-color:#59683d;background:#20251b;color:#ddff76}.reasoning-select:focus{border-color:#69737f}.reasoning-select:disabled{opacity:.5;cursor:not-allowed}.composer textarea{flex:1;resize:none;max-height:150px;min-height:31px;border:0;outline:0;background:transparent;color:#fff;padding:6px 0;line-height:1.45;min-width:0}.composer textarea::placeholder{color:#6f7883}.send{flex:0 0 38px;width:38px;height:38px;border:0;border-radius:12px;background:var(--accent);color:#111;font-size:22px;font-weight:900;cursor:pointer}.send:disabled{opacity:.35;cursor:not-allowed}.footer-note{text-align:center;color:#626b76;font-size:9px;margin-top:7px}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.58);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.2s;z-index:40}.overlay.open{opacity:1;pointer-events:auto}.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(620px,calc(100% - 30px));background:#15181d;border:1px solid #303640;border-radius:20px;padding:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:50}.modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.modal-head{display:flex;justify-content:space-between;gap:20px}.modal h2{font-size:20px;margin:0 0 4px}.modal-head p{margin:0;color:var(--muted);font-size:12px}.privacy-box{margin:18px 0;padding:11px 12px;border-radius:11px;background:#1e2420;color:#cbe6b4;font-size:11px;line-height:1.5;border:1px solid #32402b}.field-label{display:block;font-size:12px;font-weight:800;margin:0 0 7px}.profile-input{width:100%;height:180px;resize:vertical;border:1px solid #323944;border-radius:13px;background:#0f1115;color:#fff;padding:13px;outline:0;line-height:1.55}.profile-input:focus{border-color:#56606c}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.primary,.secondary{height:40px;border-radius:11px;padding:0 16px;font-weight:800;cursor:pointer}.primary{border:0;background:var(--accent);color:#111}.secondary{border:1px solid #343b45;background:#1a1e24;color:#d9dfe5}
+
+.quick-modes{display:flex;gap:6px;overflow-x:auto;padding:0 2px 7px;scrollbar-width:none}.quick-modes::-webkit-scrollbar{display:none}.quick-mode{flex:0 0 auto;border:1px solid #303741;background:#15191e;color:#aeb7c0;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:800;cursor:pointer}.quick-mode.active{background:#242b20;border-color:#5b6b3f;color:#dcff76}.memory-target{width:100%;height:42px;border:1px solid #323944;border-radius:12px;background:#0f1115;color:#fff;padding:0 11px;margin-bottom:10px;outline:none}.memory-hint{font-size:10px;color:#7f8994;margin:-2px 0 10px}.local-badge{color:#c7dda0}.sources .wiki{border-color:#39526a;background:#17222c;color:#cfe8ff}
+@media(max-width:800px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:.22s;box-shadow:30px 0 80px rgba(0,0,0,.45)}.sidebar.open{transform:translateX(0)}.mobile-close,.menu-btn{display:block}.topbar{padding:0 12px}.chat{padding:24px 15px 10px}.composer-wrap{padding-left:12px;padding-right:12px}.reasoning-select{min-width:76px;max-width:82px;padding-left:8px;padding-right:20px;font-size:11px}.hero{min-height:calc(100dvh - 250px)}.hero h1{font-size:28px}.hero p{font-size:13px}.suggestions{grid-template-columns:1fr}.suggestions button:nth-child(n+4){display:none}.bubble{max-width:89%}.top-title b{display:none}.quick-mode{padding:6px 9px;font-size:10px}}
+.sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.sources a{max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;color:#dce5bd;background:#1c211a;border:1px solid #303a28;border-radius:999px;padding:5px 9px;font-size:10px}.sources a:hover{border-color:#596b45;background:#22291e}
+
+.stream-cursor{display:inline-block;width:7px;height:1.05em;margin-left:2px;vertical-align:-.14em;border-radius:2px;background:var(--accent);animation:streamBlink .85s steps(1,end) infinite}.stream-cursor.done{display:none}@keyframes streamBlink{0%,48%{opacity:1}49%,100%{opacity:.18}}
+.bubble pre{margin:10px 0 2px;padding:12px 13px;border:1px solid #2d343d;border-radius:12px;background:#0b0d10;overflow-x:auto;white-space:pre;line-height:1.5;-webkit-overflow-scrolling:touch}.bubble pre code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px;color:#e8edf2;background:transparent}.bubble code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#20252c;border-radius:5px;padding:1px 4px;font-size:.92em}.stream-error{color:#ffb3b3}.streaming .bubble{contain:layout style}.streaming .text{min-height:1.4em}
+
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-wrap">
+        <button class="brand" id="brandBtn" aria-label="패밀짐 홈">
+          <span class="brand-mark">F</span>
+          <span><b>FAMILGYM</b><small>Our Family AI</small></span>
+        </button>
+        <button class="icon-btn mobile-close" id="closeSidebar" aria-label="메뉴 닫기">×</button>
+      </div>
+
+      <button class="new-chat" id="newChatBtn"><span>＋</span> 새 대화</button>
+
+      <div class="side-section">
+        <div class="side-label">대화 상대</div>
+        <div class="member-list" id="memberList">
+          <button class="member active" data-member="가족 공용"><span>🏠</span><span>가족 공용</span></button>
+          <button class="member" data-member="나"><span>🙂</span><span>나</span></button>
+          <button class="member" data-member="엄마"><span>🌷</span><span>엄마</span></button>
+          <button class="member" data-member="아빠"><span>🧢</span><span>아빠</span></button>
+          <button class="member" data-member="전보리"><span>🐶</span><span>전보리</span></button>
+          <button class="member" data-member="누나"><span>🎀</span><span>누나</span></button>
+        </div>
+      </div>
+
+      <div class="side-spacer"></div>
+
+      <button class="side-action" id="familyBtn"><span>👨‍👩‍👧‍👦</span><span>가족 정보</span></button>
+      <button class="side-action" id="accuracyBtn"><span>🛡️</span><span>정확도 모드</span><i class="toggle on" id="accuracyToggle"></i></button>
+      <div class="status-card" id="statusCard">
+        <span class="status-dot"></span>
+        <div><b id="statusTitle">연결 확인 중</b><small id="statusDesc">잠시만요</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
+        <div class="top-title">
+          <b>FAMILGYM</b>
+          <span id="memberBadge">가족 공용</span>
+        </div>
+        <button class="icon-btn" id="topFamilyBtn" aria-label="가족 정보">⚙</button>
+      </header>
+
+      <section class="chat" id="chat" aria-live="polite">
+        <div class="hero" id="hero">
+          <div class="hero-logo">F</div>
+          <h1>안녕하세요, <span>패밀짐</span>이에요.</h1>
+          <p>우리 가족을 위한 AI. 빠르게 답하고, 한 번 더 확인합니다.</p>
+          <div class="suggestions">
+            <button data-prompt="오늘 저녁 가족이 같이 할 수 있는 간단한 활동 5개 추천해줘">🏠 가족 활동 추천</button>
+            <button data-prompt="초등학생도 이해하게 어려운 내용을 쉽게 설명해줘">📚 쉽게 설명하기</button>
+            <button data-prompt="내가 해야 할 일을 보기 좋게 정리해줘">✅ 할 일 정리</button>
+            <button data-prompt="이 답변에서 틀릴 가능성이 있는 부분은 따로 표시해줘">🛡️ 정확도 확인</button>
+          </div>
+        </div>
+        <div class="messages" id="messages"></div>
+      </section>
+
+      <div class="composer-wrap">
+        <div class="quick-modes" id="quickModes" aria-label="빠른 모드">
+          <button type="button" class="quick-mode active" data-mode="일반">✨ 일반</button>
+          <button type="button" class="quick-mode" data-mode="공부">📚 공부</button>
+          <button type="button" class="quick-mode" data-mode="뭐 먹지">🍽️ 뭐 먹지</button>
+          <button type="button" class="quick-mode" data-mode="일정">🗓️ 일정</button>
+          <button type="button" class="quick-mode" data-mode="보리">🐶 보리</button>
+          <button type="button" class="quick-mode" data-mode="고민상담">💬 고민상담</button>
+        </div>
+        <div class="accuracy-chip" id="accuracyChip">🛡 정확도 모드 ON · 답변 후 한 번 더 검토</div>
+        <form class="composer" id="chatForm">
+          <label class="sr-only" for="reasoningMode">추론 수준</label>
+          <select class="reasoning-select" id="reasoningMode" aria-label="추론 수준" title="추론 수준">
+            <option value="noob">NOOB</option>
+            <option value="master">썩은물</option>
+          </select>
+          <textarea id="prompt" rows="1" placeholder="패밀짐에게 무엇이든 물어보세요" maxlength="10000"></textarea>
+          <button type="submit" class="send" id="sendBtn" aria-label="보내기">↑</button>
+        </form>
+        <div class="footer-note">AI는 실수할 수 있어요. 중요한 정보는 한 번 더 확인하세요.</div>
+      </div>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <section class="modal" id="familyModal" role="dialog" aria-modal="true" aria-labelledby="familyTitle">
+    <div class="modal-head">
+      <div><h2 id="familyTitle">우리 가족 정보</h2><p>패밀짐이 답변할 때 참고할 내용을 직접 적어주세요.</p></div>
+      <button class="icon-btn" id="closeModal">×</button>
+    </div>
+    <div class="privacy-box">🔒 이 정보는 현재 브라우저의 로컬 저장소에 저장됩니다. 서버에는 가족 프로필을 따로 저장하지 않습니다.</div>
+    <label class="field-label" for="memoryTarget">기억 대상</label>
+    <select class="memory-target" id="memoryTarget">
+      <option value="가족 공용">🏠 가족 공용</option>
+      <option value="나">🙂 나</option>
+      <option value="엄마">🌷 엄마</option>
+      <option value="아빠">🧢 아빠</option>
+      <option value="누나">🎀 누나</option>
+      <option value="전보리">🐶 전보리</option>
+    </select>
+    <div class="memory-hint" id="memoryHint">가족 모두에게 공통으로 적용할 정보를 적어주세요.</div>
+    <label class="field-label" for="familyProfile">패밀짐이 기억할 내용</label>
+    <textarea class="profile-input" id="familyProfile" placeholder="예) 우리 가족은 함께 가까운 곳으로 나들이하는 걸 좋아함."></textarea>
+    <div class="modal-actions">
+      <button class="secondary" id="clearProfile">내용 지우기</button>
+      <button class="primary" id="saveProfile">저장하기</button>
+    </div>
+  </section>
+
+  <script>
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+
+const MEMBERS = ['가족 공용','나','엄마','아빠','누나','전보리'];
+function loadProfiles() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('familgym.profiles') || '{}');
+    const legacy = localStorage.getItem('familgym.profile') || '';
+    const out = {};
+    MEMBERS.forEach(m => out[m] = typeof saved[m] === 'string' ? saved[m] : '');
+    if (!out['가족 공용'] && legacy) out['가족 공용'] = legacy;
+    return out;
+  } catch {
+    return Object.fromEntries(MEMBERS.map(m => [m,'']));
+  }
+}
+const state = {
+  member: MEMBERS.includes(localStorage.getItem('familgym.member')) ? localStorage.getItem('familgym.member') : '가족 공용',
+  profiles: loadProfiles(),
+  memoryTarget: '가족 공용',
+  quickMode: localStorage.getItem('familgym.quickMode') || '일반',
+  accuracyMode: localStorage.getItem('familgym.accuracy') !== 'false',
+  reasoningMode: localStorage.getItem('familgym.reasoning') === 'master' ? 'master' : 'noob',
+  history: [],
+  sending: false,
+  aiConnected: false,
+};
+
+const chat = $('#chat');
+const hero = $('#hero');
+const messages = $('#messages');
+const prompt = $('#prompt');
+const sendBtn = $('#sendBtn');
+const memberBadge = $('#memberBadge');
+const accuracyToggle = $('#accuracyToggle');
+const accuracyChip = $('#accuracyChip');
+const reasoningMode = $('#reasoningMode');
+const API_BASE = (window.FAMILGYM_API_BASE || '').replace(/\/$/, '');
+const familyProfile = $('#familyProfile');
+const memoryTarget = $('#memoryTarget');
+const memoryHint = $('#memoryHint');
+const quickModes = $$('.quick-mode');
+const overlay = $('#overlay');
+const modal = $('#familyModal');
+const sidebar = $('#sidebar');
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+}
+
+function formatInlineMarkdown(text) {
+  let html = escapeHTML(text);
+  html = html.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  return html;
+}
+
+function formatText(text) {
+  const source = String(text || '').replace(/\r\n/g, '\n');
+  const parts = source.split('```');
+  let html = '';
+  for (let i = 0; i < parts.length; i++) {
+    const part = parts[i];
+    if (i % 2 === 1) {
+      const nl = part.indexOf('\n');
+      let code = part;
+      let lang = '';
+      if (nl >= 0) {
+        const first = part.slice(0, nl).trim();
+        if (/^[a-zA-Z0-9_+.#-]{1,24}$/.test(first)) {
+          lang = first;
+          code = part.slice(nl + 1);
+        }
+      }
+      html += `<pre${lang ? ` data-lang="${escapeHTML(lang)}"` : ''}><code>${escapeHTML(code)}</code></pre>`;
+      continue;
+    }
+    let block = formatInlineMarkdown(part);
+    block = block.replace(/^### (.+)$/gm, '<strong>$1</strong>');
+    block = block.replace(/^## (.+)$/gm, '<strong>$1</strong>');
+    block = block.replace(/^# (.+)$/gm, '<strong>$1</strong>');
+    block = block.replace(/^(?:-|\*) (.+)$/gm, '• $1');
+    block = block.replace(/\n/g, '<br>');
+    html += block;
+  }
+  return html;
+}
+
+function reasoningLabel(mode) {
+  return mode === 'master' ? '썩은물' : 'NOOB';
+}
+
+function combinedProfile(member = state.member) {
+  const common = (state.profiles['가족 공용'] || '').trim();
+  const personal = member === '가족 공용' ? '' : (state.profiles[member] || '').trim();
+  return [common && `[가족 공용 기억]\n${common}`, personal && `[${member} 개인 기억]\n${personal}`].filter(Boolean).join('\n\n');
+}
+
+function saveProfiles() {
+  localStorage.setItem('familgym.profiles', JSON.stringify(state.profiles));
+  localStorage.removeItem('familgym.profile');
+}
+
+function memoryPlaceholder(target) {
+  const map = {
+    '가족 공용':'예) 우리 가족은 함께 가까운 곳으로 나들이하는 걸 좋아함.',
+    '나':'예) 나는 게임과 AI를 좋아하고, 설명은 쉽게 해주는 걸 선호함.',
+    '엄마':'예) 엄마는 핵심부터 짧게 정리한 답변을 선호함.',
+    '아빠':'예) 아빠는 비교와 근거가 있는 설명을 선호함.',
+    '누나':'예) 누나가 좋아하는 것, 일정, 답변 스타일 등을 적어주세요.',
+    '전보리':'예) 보리는 강아지. 좋아하는 산책 시간, 간식, 주의할 점 등을 적어주세요.'
+  };
+  return map[target] || '';
+}
+
+function quickInstruction() {
+  const map = {
+    '일반':'일반적인 가족 AI 비서처럼 답변',
+    '공부':'개념을 단계적으로 쉽게 설명하고 필요하면 예시를 사용',
+    '뭐 먹지':'가족이 함께 먹기 좋은 메뉴를 현실적으로 추천',
+    '일정':'사용자가 준 일정과 할 일을 시간 순서로 깔끔하게 정리',
+    '보리':'강아지 전보리 관련 질문에 반려견 관점의 안전한 일반 정보를 제공',
+    '고민상담':'판단하거나 몰아붙이지 말고 선택지와 다음 행동을 차분하게 정리'
+  };
+  return map[state.quickMode] || map['일반'];
+}
+
+function updateUI() {
+  memberBadge.textContent = state.member;
+  $$('.member').forEach(b => b.classList.toggle('active', b.dataset.member === state.member));
+  accuracyToggle.classList.toggle('on', state.accuracyMode);
+  reasoningMode.value = state.reasoningMode;
+  reasoningMode.dataset.mode = state.reasoningMode;
+  quickModes.forEach(b => b.classList.toggle('active', b.dataset.mode === state.quickMode));
+  accuracyChip.textContent = state.accuracyMode
+    ? (state.aiConnected
+      ? `🛡 정확도 모드 ON · ${reasoningLabel(state.reasoningMode)} 추론 · 답변 후 한 번 더 검토`
+      : `🛡 정확도 모드 ON · ${reasoningLabel(state.reasoningMode)} · 로컬 답변은 근거 우선`)
+    : `⚡ 정확도 검토 OFF · ${reasoningLabel(state.reasoningMode)} 추론`;
+}
+
+function autoResize() {
+  prompt.style.height = 'auto';
+  prompt.style.height = Math.min(prompt.scrollHeight, 150) + 'px';
+}
+
+function addMessage(role, content, meta = {}) {
+  hero.style.display = 'none';
+  const wrap = document.createElement('div');
+  wrap.className = `message ${role}`;
+  if (role === 'assistant') {
+    const modeBadge = meta.reasoningMode
+      ? `<span>🧠 ${reasoningLabel(meta.reasoningMode)}</span>`
+      : '';
+    wrap.innerHTML = `<div class="avatar">F</div><div class="bubble"><div class="text">${formatText(content)}</div><div class="meta-row">${meta.verified ? '<span class="verified">✓ 2차 검토 완료</span>' : ''}${meta.sources?.length ? '<span>🌐 웹 확인</span>' : ''}${meta.local ? '<span class="local-badge">◈ 로컬 응답</span>' : ''}${meta.demo ? '<span>데모 모드</span>' : ''}${modeBadge}</div></div>`;
+    if (Array.isArray(meta.sources) && meta.sources.length) {
+      const sourceWrap = document.createElement('div');
+      sourceWrap.className = 'sources';
+      for (const source of meta.sources.slice(0, 4)) {
+        if (!source?.url || !/^https?:\/\//i.test(source.url)) continue;
+        const a = document.createElement('a');
+        a.href = source.url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = source.title || '출처';
+        sourceWrap.appendChild(a);
+      }
+      wrap.querySelector('.bubble').appendChild(sourceWrap);
+    }
+  } else {
+    wrap.innerHTML = `<div class="bubble">${formatText(content)}</div>`;
+  }
+  messages.appendChild(wrap);
+  chat.scrollTop = chat.scrollHeight;
+  return wrap;
+}
+
+function addTyping() {
+  hero.style.display = 'none';
+  const wrap = document.createElement('div');
+  wrap.className = 'message assistant';
+  wrap.innerHTML = `<div class="avatar">F</div><div class="bubble"><span class="typing"><i></i><i></i><i></i></span></div>`;
+  messages.appendChild(wrap);
+  chat.scrollTop = chat.scrollHeight;
+  return wrap;
+}
+
+
+function shouldStickToBottom() {
+  return chat.scrollHeight - chat.scrollTop - chat.clientHeight < 140;
+}
+
+function scrollChat(force = false) {
+  if (force || shouldStickToBottom()) chat.scrollTop = chat.scrollHeight;
+}
+
+function createStreamingMessage() {
+  hero.style.display = 'none';
+  const wrap = document.createElement('div');
+  wrap.className = 'message assistant streaming';
+  wrap.innerHTML = `<div class="avatar">F</div><div class="bubble"><div class="text"><span class="typing"><i></i><i></i><i></i></span></div><div class="meta-row"></div></div>`;
+  messages.appendChild(wrap);
+  scrollChat(true);
+  return {
+    wrap,
+    textEl: wrap.querySelector('.text'),
+    metaEl: wrap.querySelector('.meta-row'),
+    text: '',
+    hasDelta: false,
+    raf: 0,
+    sources: [],
+  };
+}
+
+function scheduleStreamingRender(streamMsg) {
+  if (streamMsg.raf) return;
+  streamMsg.raf = requestAnimationFrame(() => {
+    streamMsg.raf = 0;
+    const cursor = '<span class="stream-cursor" aria-hidden="true"></span>';
+    streamMsg.textEl.innerHTML = formatText(streamMsg.text) + cursor;
+    scrollChat();
+  });
+}
+
+function appendStreamDelta(streamMsg, delta) {
+  if (!delta) return;
+  streamMsg.hasDelta = true;
+  streamMsg.text += delta;
+  scheduleStreamingRender(streamMsg);
+}
+
+function renderMeta(streamMsg, meta = {}) {
+  const items = [];
+  if (meta.verified) items.push('<span class="verified">✓ 2차 검토 완료</span>');
+  if (streamMsg.sources?.length) items.push('<span>🌐 웹 확인</span>');
+  if (meta.local) items.push('<span class="local-badge">◈ 로컬 응답</span>');
+  if (meta.error) items.push('<span class="stream-error">⚠ 스트림 중단 · 표시된 내용 유지</span>');
+  if (meta.verificationError) items.push('<span class="stream-error">⚠ 2차 검토 미완료</span>');
+  items.push(`<span>🧠 ${reasoningLabel(meta.reasoningMode || state.reasoningMode)}</span>`);
+  streamMsg.metaEl.innerHTML = items.join('');
+}
+
+function attachSources(streamMsg, sources = []) {
+  streamMsg.sources = Array.isArray(sources) ? sources.filter(s => s?.url && /^https?:\/\//i.test(s.url)).slice(0, 4) : [];
+  const old = streamMsg.wrap.querySelector('.sources');
+  if (old) old.remove();
+  if (!streamMsg.sources.length) return;
+  const sourceWrap = document.createElement('div');
+  sourceWrap.className = 'sources';
+  for (const source of streamMsg.sources) {
+    const a = document.createElement('a');
+    a.href = source.url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = source.title || '출처';
+    sourceWrap.appendChild(a);
+  }
+  streamMsg.wrap.querySelector('.bubble').appendChild(sourceWrap);
+}
+
+function finalizeStreamingMessage(streamMsg, meta = {}) {
+  if (streamMsg.raf) cancelAnimationFrame(streamMsg.raf);
+  streamMsg.raf = 0;
+  streamMsg.wrap.classList.remove('streaming');
+  streamMsg.textEl.innerHTML = formatText(streamMsg.text);
+  attachSources(streamMsg, meta.sources || streamMsg.sources);
+  renderMeta(streamMsg, meta);
+  scrollChat();
+}
+
+function markStreamError(streamMsg, message) {
+  streamMsg.wrap.classList.remove('streaming');
+  if (!streamMsg.hasDelta) {
+    streamMsg.text = message || '답변 스트림을 시작하지 못했어.';
+    streamMsg.textEl.innerHTML = formatText(streamMsg.text);
+  } else {
+    if (streamMsg.raf) cancelAnimationFrame(streamMsg.raf);
+    streamMsg.raf = 0;
+    streamMsg.textEl.innerHTML = formatText(streamMsg.text);
+  }
+  renderMeta(streamMsg, { error: true, reasoningMode: state.reasoningMode });
+  scrollChat();
+}
+
+async function consumeEventStream(response, onEvent) {
+  if (!response.body || typeof response.body.getReader !== 'function') {
+    throw new Error('STREAM_UNSUPPORTED');
+  }
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder('utf-8');
+  let buffer = '';
+  while (true) {
+    const { value, done } = await reader.read();
+    if (value) buffer += decoder.decode(value, { stream: !done });
+    let match;
+    while ((match = buffer.match(/\r?\n\r?\n/))) {
+      const raw = buffer.slice(0, match.index);
+      buffer = buffer.slice(match.index + match[0].length);
+      const data = raw.split(/\r?\n/)
+        .filter(line => line.startsWith('data:'))
+        .map(line => line.slice(5).trimStart())
+        .join('\\n');
+      if (!data) continue;
+      let event;
+      try { event = JSON.parse(data); }
+      catch { continue; }
+      await onEvent(event);
+    }
+    if (done) break;
+  }
+}
+
+function normalizeMath(q) {
+  return q.replace(/더하기/g,'+').replace(/빼기/g,'-').replace(/곱하기/g,'*').replace(/나누기/g,'/').replace(/×/g,'*').replace(/÷/g,'/').replace(/=/g,'').replace(/은\?|는\?|은|는|얼마|계산해줘|계산|\?/g,'').trim();
+}
+
+function safeCalculate(text) {
+  const expr = normalizeMath(text);
+  if (!expr || expr.length > 80 || !/^[0-9+\-*/().%\s]+$/.test(expr)) return null;
+  try {
+    const value = Function('"use strict";return (' + expr + ')')();
+    if (typeof value !== 'number' || !Number.isFinite(value)) return null;
+    return Number.isInteger(value) ? String(value) : String(Math.round(value * 1e10) / 1e10);
+  } catch { return null; }
+}
+
+function stripWikiHtml(s) {
+  return String(s || '').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
+}
+
+async function wikiFallback(text) {
+  const q = text.replace(/[?？]/g,' ').replace(/알려줘|설명해줘|뭐야|무엇이야|누구야|어디야|뜻이야/g,' ').trim();
+  if (q.length < 2 || q.length > 80) return null;
+  const url = 'https://ko.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=' + encodeURIComponent(q) + '&gsrlimit=1&prop=extracts|info&exintro=1&explaintext=1&inprop=url&format=json&origin=*';
+  try {
+    const r = await fetch(url, {signal: AbortSignal.timeout ? AbortSignal.timeout(4500) : undefined});
+    if (!r.ok) return null;
+    const d = await r.json();
+    const pages = d?.query?.pages ? Object.values(d.query.pages) : [];
+    const p = pages[0];
+    const extract = stripWikiHtml(p?.extract);
+    if (!extract || extract.length < 30) return null;
+    return {answer: `**${p.title}**\n${extract.slice(0, 700)}${extract.length > 700 ? '…' : ''}`, sources:[{title:'위키백과: '+p.title,url:p.fullurl}], verified:false};
+  } catch { return null; }
+}
+
+function modeFallback(text) {
+  const q = text.trim();
+  const profile = combinedProfile();
+  if (state.quickMode === '공부') return `공부 모드로 도와줄게. **${q}**에서 정확히 어떤 과목/개념인지 한 줄만 더 알려주면, ① 핵심 개념 ② 쉬운 예시 ③ 확인 문제 순서로 설명할 수 있어.`;
+  if (state.quickMode === '뭐 먹지') {
+    const menus = ['김치찌개','카레','비빔밥','칼국수','돈가스','샤브샤브','닭갈비','파스타'];
+    const seed=[...q].reduce((a,c)=>a+c.charCodeAt(0),0);
+    const picks=[menus[seed%menus.length],menus[(seed+3)%menus.length],menus[(seed+5)%menus.length]];
+    return `오늘 메뉴 후보는 **${picks.join(' / ')}** 어때?\n가족 취향이나 배달/외식/집밥 중 하나를 말해주면 더 좁혀줄게.`;
+  }
+  if (state.quickMode === '일정') return `일정 모드야. 지금 질문에서 시간표로 만들 정보가 충분하지 않아. **시간 + 할 일** 형태로 보내주면 겹치는 일정까지 확인해서 순서대로 정리해줄게.`;
+  if (state.quickMode === '보리') return `🐶 보리 모드야. 보리의 **나이, 체중, 지금 궁금한 행동/먹은 것/산책 상황**을 알려주면 일반적인 반려견 정보 범위에서 정리해줄게. 응급 증상이나 치료 판단은 동물병원 확인이 필요해.`;
+  if (state.quickMode === '고민상담') return `네가 말한 내용을 기준으로 **상황 / 선택지 / 지금 할 수 있는 한 가지** 순서로 정리해줄 수 있어. 무슨 일이 있었는지 편하게 적어줘.`;
+  if (profile) return `지금은 생성형 AI 서버가 연결되기 전이라 이 질문을 완전한 AI 답변으로 만들 수는 없어. 대신 **${state.member} 기억**은 저장되어 있고, 계산·시간·기초 지식 검색은 바로 처리할 수 있어.`;
+  return `이 질문은 로컬 기능만으로 정확한 답을 만들기 어려워. **실제 AI 서버가 연결되면 정상 답변**이 가능해. 지금도 계산, 현재 시간/날짜, 간단한 백과사전형 질문은 처리할 수 있어.`;
+}
+
+async function localPreviewAnswer(text) {
+  const q = text.trim().toLowerCase();
+  if (q.includes('안녕')) return {answer:`안녕! ${state.member === '가족 공용' ? '우리 가족' : state.member} 👋 나는 패밀짐이야.`, local:true};
+  if ((q.includes('누구') && q.includes('너')) || q.includes('패밀짐')) return {answer:'나는 **FAMILGYM(패밀짐)**이야. 가족별 기억과 빠른 모드를 사용하는 우리 가족용 AI 웹앱이야.', local:true};
+  const calc = safeCalculate(q);
+  if (calc !== null) return {answer:`계산 결과는 **${calc}**야.`, local:true};
+  if (/(몇 시|몇시|현재 시간|지금 시간)/.test(q)) {
+    const now = new Date();
+    return {answer:`지금 이 기기 기준 시간은 **${now.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'})}**이야.`, local:true};
+  }
+  if (/(오늘 날짜|오늘 며칠|무슨 요일)/.test(q)) {
+    const now = new Date();
+    return {answer:`오늘은 **${now.toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'})}**이야.`, local:true};
+  }
+  if (state.quickMode !== '일반') return {answer:modeFallback(text), local:true};
+  const wiki = await wikiFallback(text);
+  if (wiki) return {...wiki, local:true};
+  return {answer:modeFallback(text), local:true};
+}
+
+async function requestNonStreamingFallback(text) {
+  const response = await fetch(`${API_BASE}/api/chat`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      message: text,
+      member: state.member,
+      familyProfile: combinedProfile(),
+      quickMode: state.quickMode,
+      quickInstruction: quickInstruction(),
+      accuracyMode: state.accuracyMode,
+      reasoningMode: state.reasoningMode,
+      history: state.history.slice(-12),
+    }),
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || '답변을 가져오지 못했어요.');
+  return data;
+}
+
+async function sendMessage(text) {
+  text = text.trim();
+  if (!text || state.sending) return;
+  state.sending = true;
+  sendBtn.disabled = true;
+  reasoningMode.disabled = true;
+  prompt.value = '';
+  autoResize();
+
+  addMessage('user', text);
+  let streamMsg = null;
+
+  try {
+    if (!API_BASE) throw new Error('LOCAL_MODE');
+    streamMsg = createStreamingMessage();
+    const response = await fetch(`${API_BASE}/api/chat/stream`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'text/event-stream'},
+      body: JSON.stringify({
+        message: text,
+        member: state.member,
+        familyProfile: combinedProfile(),
+        quickMode: state.quickMode,
+        quickInstruction: quickInstruction(),
+        accuracyMode: state.accuracyMode,
+        reasoningMode: state.reasoningMode,
+        history: state.history.slice(-12),
+      }),
+    });
+
+    if (!response.ok) {
+      const errText = await response.text().catch(() => '');
+      throw new Error(errText || `스트리밍 연결 오류 (${response.status})`);
+    }
+
+    // 구형 Safari/브라우저에서 ReadableStream이 없으면 기존 JSON 방식으로 자동 폴백.
+    if (!response.body || typeof response.body.getReader !== 'function') {
+      streamMsg.wrap.remove();
+      streamMsg = null;
+      const data = await requestNonStreamingFallback(text);
+      addMessage('assistant', data.answer || '답변이 비어 있어요.', {
+        verified: data.verified,
+        demo: data.demo,
+        sources: data.sources || [],
+        reasoningMode: data.reasoningMode || state.reasoningMode,
+      });
+      state.history.push({ role:'user', content:text }, { role:'assistant', content:data.answer || '' });
+      state.history = state.history.slice(-16);
+      return;
+    }
+
+    let finalMeta = { sources: [], verified: false, reasoningMode: state.reasoningMode };
+    let streamError = '';
+    await consumeEventStream(response, async (event) => {
+      if (event.type === 'delta') {
+        appendStreamDelta(streamMsg, event.delta || '');
+      } else if (event.type === 'sources') {
+        finalMeta.sources = Array.isArray(event.sources) ? event.sources : [];
+        attachSources(streamMsg, finalMeta.sources);
+      } else if (event.type === 'meta') {
+        finalMeta = { ...finalMeta, ...event };
+      } else if (event.type === 'correction') {
+        appendStreamDelta(streamMsg, event.delta || '');
+        finalMeta.corrected = true;
+      } else if (event.type === 'verification_error') {
+        finalMeta.verificationError = true;
+      } else if (event.type === 'error') {
+        streamError = event.message || '스트리밍 중 오류가 발생했어요.';
+      } else if (event.type === 'done') {
+        finalMeta = { ...finalMeta, ...event };
+      }
+    });
+
+    if (streamError) {
+      if (!streamMsg.hasDelta) throw new Error(streamError);
+      markStreamError(streamMsg, streamError);
+      state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
+      state.history = state.history.slice(-16);
+      return;
+    }
+
+    if (!streamMsg.hasDelta) throw new Error('빈 스트림 응답');
+    finalizeStreamingMessage(streamMsg, {
+      verified: Boolean(finalMeta.verified),
+      verificationError: Boolean(finalMeta.verificationError),
+      sources: finalMeta.sources || [],
+      reasoningMode: finalMeta.reasoningMode || state.reasoningMode,
+    });
+    state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
+    state.history = state.history.slice(-16);
+  } catch (err) {
+    if (streamMsg?.hasDelta) {
+      markStreamError(streamMsg, err?.message || '스트리밍이 중단됐어요.');
+      state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
+      state.history = state.history.slice(-16);
+    } else {
+      if (streamMsg?.wrap?.isConnected) streamMsg.wrap.remove();
+      const typing = addTyping();
+      const fallback = await localPreviewAnswer(text);
+      typing.remove();
+      const answer = fallback.answer;
+      addMessage('assistant', answer, { local: true, sources: fallback.sources || [], reasoningMode: state.reasoningMode });
+      state.history.push({ role:'user', content:text }, { role:'assistant', content:answer });
+      state.history = state.history.slice(-16);
+    }
+  } finally {
+    state.sending = false;
+    sendBtn.disabled = false;
+    reasoningMode.disabled = false;
+    prompt.focus();
+  }
+}
+
+function resetChat() {
+  state.history = [];
+  messages.innerHTML = '';
+  hero.style.display = 'flex';
+  prompt.value = '';
+  autoResize();
+  closeSidebar();
+}
+
+function loadMemoryEditor(target = state.memoryTarget) {
+  state.memoryTarget = MEMBERS.includes(target) ? target : '가족 공용';
+  memoryTarget.value = state.memoryTarget;
+  familyProfile.value = state.profiles[state.memoryTarget] || '';
+  familyProfile.placeholder = memoryPlaceholder(state.memoryTarget);
+  memoryHint.textContent = state.memoryTarget === '가족 공용'
+    ? '가족 모두에게 공통으로 적용할 정보를 적어주세요.'
+    : `${state.memoryTarget}에게만 적용할 개인 기억을 적어주세요.`;
+}
+
+function openFamily() {
+  closeSidebar(false);
+  loadMemoryEditor(state.member === '가족 공용' ? '가족 공용' : state.member);
+  modal.classList.add('open');
+  overlay.classList.add('open');
+  setTimeout(() => familyProfile.focus(), 120);
+}
+
+function closeFamily() {
+  modal.classList.remove('open');
+  if (!sidebar.classList.contains('open')) overlay.classList.remove('open');
+}
+
+function closeSidebar(updateOverlay = true) {
+  sidebar.classList.remove('open');
+  if (updateOverlay && !modal.classList.contains('open')) overlay.classList.remove('open');
+}
+
+$('#chatForm').addEventListener('submit', e => { e.preventDefault(); sendMessage(prompt.value); });
+prompt.addEventListener('input', autoResize);
+prompt.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(prompt.value); }
+});
+
+$$('.suggestions button').forEach(b => b.addEventListener('click', () => sendMessage(b.dataset.prompt)));
+$$('.member').forEach(b => b.addEventListener('click', () => {
+  state.member = b.dataset.member;
+  localStorage.setItem('familgym.member', state.member);
+  updateUI();
+  closeSidebar();
+}));
+
+quickModes.forEach(b => b.addEventListener('click', () => {
+  state.quickMode = b.dataset.mode || '일반';
+  localStorage.setItem('familgym.quickMode', state.quickMode);
+  updateUI();
+}));
+
+memoryTarget.addEventListener('change', () => loadMemoryEditor(memoryTarget.value));
+
+reasoningMode.addEventListener('change', () => {
+  state.reasoningMode = reasoningMode.value === 'master' ? 'master' : 'noob';
+  localStorage.setItem('familgym.reasoning', state.reasoningMode);
+  updateUI();
+});
+
+$('#accuracyBtn').addEventListener('click', () => {
+  state.accuracyMode = !state.accuracyMode;
+  localStorage.setItem('familgym.accuracy', String(state.accuracyMode));
+  updateUI();
+});
+$('#newChatBtn').addEventListener('click', resetChat);
+$('#brandBtn').addEventListener('click', resetChat);
+$('#familyBtn').addEventListener('click', openFamily);
+$('#topFamilyBtn').addEventListener('click', openFamily);
+$('#closeModal').addEventListener('click', closeFamily);
+overlay.addEventListener('click', () => {
+  modal.classList.remove('open');
+  sidebar.classList.remove('open');
+  overlay.classList.remove('open');
+});
+$('#saveProfile').addEventListener('click', () => {
+  state.profiles[state.memoryTarget] = familyProfile.value.trim();
+  saveProfiles();
+  closeFamily();
+});
+$('#clearProfile').addEventListener('click', () => {
+  familyProfile.value = '';
+  state.profiles[state.memoryTarget] = '';
+  saveProfiles();
+});
+$('#menuBtn').addEventListener('click', () => {
+  sidebar.classList.add('open');
+  overlay.classList.add('open');
+});
+$('#closeSidebar').addEventListener('click', () => closeSidebar());
+
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (modal.classList.contains('open')) closeFamily();
+  else if (sidebar.classList.contains('open')) closeSidebar();
+});
+
+async function checkStatus() {
+  try {
+    const r = await fetch(`${API_BASE}/api/status`, { cache:'no-store' });
+    const data = await r.json();
+    const dot = $('#statusCard .status-dot');
+    if (data.aiConnected) {
+      state.aiConnected = true;
+      dot.classList.add('live');
+      $('#statusTitle').textContent = 'AI 연결됨';
+      $('#statusDesc').textContent = `${data.model} · 실제 스트리밍 지원`;
+    } else {
+      state.aiConnected = false;
+      dot.classList.remove('live');
+      $('#statusTitle').textContent = '로컬 지식 모드';
+      $('#statusDesc').textContent = 'AI 서버 연결 전 · 기본 기능 사용 가능';
+    }
+    updateUI();
+  } catch {
+    state.aiConnected = false;
+    $('#statusTitle').textContent = '로컬 지식 모드';
+    $('#statusDesc').textContent = '계산 · 시간 · 기초 지식 검색 사용 가능';
+    updateUI();
+  }
+}
+
+updateUI();
+autoResize();
+checkStatus();
+
+</script>
+</body>
+</html>
