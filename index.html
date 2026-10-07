@@ -4,25 +4,43 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#111318" />
-  <title>FAMILGYM v4 — Our Family AI</title>
+  <title>FAMILGYM v8 — Our Family AI</title>
   <style>
 :root{
   --bg:#0d0f12;--panel:#14171c;--panel2:#1a1e24;--line:#282d35;--text:#f4f6f8;--muted:#9aa3ad;
   --accent:#d9ff5b;--accent2:#bdf63e;--user:#262b33;--danger:#ff6b6b;--shadow:0 24px 80px rgba(0,0,0,.38);
 }
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,"Noto Sans KR",sans-serif}
-button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.app-shell{height:100dvh;display:grid;grid-template-columns:278px 1fr;overflow:hidden}.sidebar{background:#101216;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:18px 14px;z-index:20}.brand-wrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;border:0;background:none;color:var(--text);padding:6px;cursor:pointer;text-align:left}.brand-mark,.hero-logo{display:grid;place-items:center;background:var(--accent);color:#101210;font-weight:900}.brand-mark{width:38px;height:38px;border-radius:12px;font-size:20px}.brand b{display:block;font-size:15px;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.new-chat{margin:21px 4px 18px;background:var(--text);color:#111;border:0;border-radius:13px;height:45px;font-weight:800;cursor:pointer}.new-chat:hover{background:#fff}.new-chat span{font-size:19px;margin-right:6px}.side-section{padding:3px 4px}.side-label{font-size:11px;color:#737c87;font-weight:800;letter-spacing:.08em;margin:10px 8px}.member-list{display:grid;gap:4px}.member,.side-action{width:100%;height:43px;border:0;border-radius:11px;background:transparent;color:#cdd3da;display:flex;align-items:center;gap:10px;padding:0 12px;cursor:pointer}.member:hover,.side-action:hover{background:var(--panel2)}.member.active{background:#20252c;color:#fff}.member span:first-child{font-size:17px}.side-spacer{flex:1}.side-action{position:relative}.side-action>span:first-child{width:22px}.toggle{margin-left:auto;width:34px;height:20px;border-radius:999px;background:#383f48;position:relative}.toggle:after{content:"";position:absolute;width:14px;height:14px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.18s}.toggle.on{background:var(--accent)}.toggle.on:after{left:17px;background:#111}.status-card{margin:10px 5px 0;padding:11px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:10px}.status-dot{width:8px;height:8px;border-radius:50%;background:#f5b942;box-shadow:0 0 0 4px rgba(245,185,66,.1)}.status-dot.live{background:#67dd80;box-shadow:0 0 0 4px rgba(103,221,128,.1)}.status-card b{display:block;font-size:11px}.status-card small{display:block;font-size:10px;color:var(--muted);margin-top:2px}.main{min-width:0;display:grid;grid-template-rows:60px 1fr auto;background:radial-gradient(circle at 70% -30%,rgba(217,255,91,.06),transparent 37%),var(--bg)}.topbar{height:60px;border-bottom:1px solid rgba(40,45,53,.8);display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(13,15,18,.86);backdrop-filter:blur(12px);z-index:10}.top-title{display:flex;align-items:center;gap:10px}.top-title b{font-size:14px;letter-spacing:.06em}.top-title span{font-size:10px;color:#151713;background:var(--accent);padding:4px 8px;border-radius:999px;font-weight:900}.icon-btn{width:38px;height:38px;border:0;border-radius:11px;background:transparent;color:#d9dee4;font-size:20px;cursor:pointer}.icon-btn:hover{background:var(--panel2)}.menu-btn,.mobile-close{display:none}.chat{overflow-y:auto;padding:34px max(24px,calc((100% - 840px)/2)) 18px;scroll-behavior:smooth}.hero{min-height:calc(100dvh - 260px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 0}.hero-logo{width:58px;height:58px;border-radius:18px;font-size:31px;box-shadow:0 12px 36px rgba(217,255,91,.13)}.hero h1{font-size:34px;letter-spacing:-.04em;margin:20px 0 8px}.hero h1 span{color:var(--accent)}.hero p{color:var(--muted);font-size:14px;margin:0 0 28px}.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:min(620px,100%)}.suggestions button{min-height:54px;text-align:left;border:1px solid var(--line);background:#13161a;color:#dfe4e9;border-radius:14px;padding:12px 14px;cursor:pointer}.suggestions button:hover{border-color:#424a56;background:#181c21}.messages{display:grid;gap:20px;padding-bottom:12px}.message{display:flex;gap:12px;max-width:100%}.message.user{justify-content:flex-end}.avatar{flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:13px;background:var(--accent);color:#101210}.bubble{max-width:min(720px,85%);border-radius:18px;padding:12px 15px;line-height:1.62;font-size:14px;white-space:pre-wrap;word-break:break-word}.assistant .bubble{background:transparent;padding-top:4px}.user .bubble{background:var(--user);border:1px solid #303640}.meta-row{font-size:10px;color:#737d88;margin-top:8px;display:flex;gap:8px}.verified{color:#bfe956}.typing{display:inline-flex;gap:5px;padding:8px 0}.typing i{width:6px;height:6px;border-radius:50%;background:#89939e;animation:bounce 1s infinite}.typing i:nth-child(2){animation-delay:.14s}.typing i:nth-child(3){animation-delay:.28s}@keyframes bounce{0%,70%,100%{transform:translateY(0);opacity:.5}35%{transform:translateY(-5px);opacity:1}}.composer-wrap{padding:8px max(24px,calc((100% - 840px)/2)) max(13px,env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(13,15,18,0),#0d0f12 18%)}.accuracy-chip{font-size:10px;color:#aeb7c0;margin:0 10px 7px}.composer{display:flex;align-items:flex-end;gap:9px;border:1px solid #333944;background:#171a1f;border-radius:18px;padding:9px 10px;box-shadow:0 14px 45px rgba(0,0,0,.25)}.composer:focus-within{border-color:#596271}.reasoning-select{flex:0 0 auto;height:38px;min-width:88px;max-width:104px;border:1px solid #363d47;border-radius:12px;background:#20242a;color:#eef1f4;padding:0 28px 0 10px;outline:none;font-size:12px;font-weight:900;cursor:pointer;color-scheme:dark}.reasoning-select[data-mode="master"]{border-color:#59683d;background:#20251b;color:#ddff76}.reasoning-select:focus{border-color:#69737f}.reasoning-select:disabled{opacity:.5;cursor:not-allowed}.composer textarea{flex:1;resize:none;max-height:150px;min-height:31px;border:0;outline:0;background:transparent;color:#fff;padding:6px 0;line-height:1.45;min-width:0}.composer textarea::placeholder{color:#6f7883}.send{flex:0 0 38px;width:38px;height:38px;border:0;border-radius:12px;background:var(--accent);color:#111;font-size:22px;font-weight:900;cursor:pointer}.send:disabled{opacity:.35;cursor:not-allowed}.footer-note{text-align:center;color:#626b76;font-size:9px;margin-top:7px}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.58);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.2s;z-index:40}.overlay.open{opacity:1;pointer-events:auto}.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(620px,calc(100% - 30px));background:#15181d;border:1px solid #303640;border-radius:20px;padding:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:50}.modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.modal-head{display:flex;justify-content:space-between;gap:20px}.modal h2{font-size:20px;margin:0 0 4px}.modal-head p{margin:0;color:var(--muted);font-size:12px}.privacy-box{margin:18px 0;padding:11px 12px;border-radius:11px;background:#1e2420;color:#cbe6b4;font-size:11px;line-height:1.5;border:1px solid #32402b}.field-label{display:block;font-size:12px;font-weight:800;margin:0 0 7px}.profile-input{width:100%;height:180px;resize:vertical;border:1px solid #323944;border-radius:13px;background:#0f1115;color:#fff;padding:13px;outline:0;line-height:1.55}.profile-input:focus{border-color:#56606c}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.primary,.secondary{height:40px;border-radius:11px;padding:0 16px;font-weight:800;cursor:pointer}.primary{border:0;background:var(--accent);color:#111}.secondary{border:1px solid #343b45;background:#1a1e24;color:#d9dfe5}
+*{box-sizing:border-box}html,body{height:100%;overscroll-behavior:none}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,"Noto Sans KR",sans-serif}
+button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.app-shell{height:100dvh;min-height:0;display:grid;grid-template-columns:278px 1fr;overflow:hidden}.sidebar{background:#101216;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:18px 14px;z-index:20}.brand-wrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;border:0;background:none;color:var(--text);padding:6px;cursor:pointer;text-align:left}.brand-mark,.hero-logo{display:grid;place-items:center;background:var(--accent);color:#101210;font-weight:900}.brand-mark{width:38px;height:38px;border-radius:12px;font-size:20px}.brand b{display:block;font-size:15px;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}.new-chat{margin:21px 4px 18px;background:var(--text);color:#111;border:0;border-radius:13px;height:45px;font-weight:800;cursor:pointer}.new-chat:hover{background:#fff}.new-chat span{font-size:19px;margin-right:6px}.side-section{padding:3px 4px}.side-label{font-size:11px;color:#737c87;font-weight:800;letter-spacing:.08em;margin:10px 8px}.member-list{display:grid;gap:4px}.member,.side-action{width:100%;height:43px;border:0;border-radius:11px;background:transparent;color:#cdd3da;display:flex;align-items:center;gap:10px;padding:0 12px;cursor:pointer}.member:hover,.side-action:hover{background:var(--panel2)}.member.active{background:#20252c;color:#fff}.member span:first-child{font-size:17px}.side-spacer{flex:1}.side-action{position:relative}.side-action>span:first-child{width:22px}.toggle{margin-left:auto;width:34px;height:20px;border-radius:999px;background:#383f48;position:relative}.toggle:after{content:"";position:absolute;width:14px;height:14px;left:3px;top:3px;border-radius:50%;background:#fff;transition:.18s}.toggle.on{background:var(--accent)}.toggle.on:after{left:17px;background:#111}.status-card{margin:10px 5px 0;padding:11px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:10px}.status-dot{width:8px;height:8px;border-radius:50%;background:#f5b942;box-shadow:0 0 0 4px rgba(245,185,66,.1)}.status-dot.live{background:#67dd80;box-shadow:0 0 0 4px rgba(103,221,128,.1)}.status-card b{display:block;font-size:11px}.status-card small{display:block;font-size:10px;color:var(--muted);margin-top:2px}.main{min-width:0;min-height:0;overflow:hidden;display:grid;grid-template-rows:60px minmax(0,1fr) auto;background:radial-gradient(circle at 70% -30%,rgba(217,255,91,.06),transparent 37%),var(--bg)}.topbar{height:60px;border-bottom:1px solid rgba(40,45,53,.8);display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:rgba(13,15,18,.86);backdrop-filter:blur(12px);z-index:10}.top-title{display:flex;align-items:center;gap:10px}.top-title b{font-size:14px;letter-spacing:.06em}.top-title span{font-size:10px;color:#151713;background:var(--accent);padding:4px 8px;border-radius:999px;font-weight:900}.icon-btn{width:38px;height:38px;border:0;border-radius:11px;background:transparent;color:#d9dee4;font-size:20px;cursor:pointer}.icon-btn:hover{background:var(--panel2)}.menu-btn,.mobile-close{display:none}.chat{min-height:0;overflow-y:auto;overflow-x:hidden;padding:34px max(24px,calc((100% - 840px)/2)) 18px;scroll-behavior:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;touch-action:pan-y}.hero{min-height:calc(100dvh - 260px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 0}.hero-logo{width:58px;height:58px;border-radius:18px;font-size:31px;box-shadow:0 12px 36px rgba(217,255,91,.13)}.hero h1{font-size:34px;letter-spacing:-.04em;margin:20px 0 8px}.hero h1 span{color:var(--accent)}.hero p{color:var(--muted);font-size:14px;margin:0 0 28px}.suggestions{display:grid;grid-template-columns:1fr 1fr;gap:9px;width:min(620px,100%)}.suggestions button{min-height:54px;text-align:left;border:1px solid var(--line);background:#13161a;color:#dfe4e9;border-radius:14px;padding:12px 14px;cursor:pointer}.suggestions button:hover{border-color:#424a56;background:#181c21}.messages{display:grid;gap:20px;padding-bottom:12px;min-height:0}.message{display:flex;gap:12px;max-width:100%}.message.user{justify-content:flex-end}.avatar{flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:13px;background:var(--accent);color:#101210}.bubble{max-width:min(720px,85%);border-radius:18px;padding:12px 15px;line-height:1.62;font-size:14px;white-space:pre-wrap;word-break:break-word}.assistant .bubble{background:transparent;padding-top:4px}.user .bubble{background:var(--user);border:1px solid #303640}.meta-row{font-size:10px;color:#737d88;margin-top:8px;display:flex;gap:8px}.verified{color:#bfe956}.typing{display:inline-flex;gap:5px;padding:8px 0}.typing i{width:6px;height:6px;border-radius:50%;background:#89939e;animation:bounce 1s infinite}.typing i:nth-child(2){animation-delay:.14s}.typing i:nth-child(3){animation-delay:.28s}@keyframes bounce{0%,70%,100%{transform:translateY(0);opacity:.5}35%{transform:translateY(-5px);opacity:1}}.composer-wrap{padding:8px max(24px,calc((100% - 840px)/2)) max(13px,env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(13,15,18,0),#0d0f12 18%)}.accuracy-chip{font-size:10px;color:#aeb7c0;margin:0 10px 7px}.composer{display:flex;align-items:flex-end;gap:9px;border:1px solid #333944;background:#171a1f;border-radius:18px;padding:9px 10px;box-shadow:0 14px 45px rgba(0,0,0,.25)}.composer:focus-within{border-color:#596271}.reasoning-select{flex:0 0 auto;height:38px;min-width:88px;max-width:104px;border:1px solid #363d47;border-radius:12px;background:#20242a;color:#eef1f4;padding:0 28px 0 10px;outline:none;font-size:12px;font-weight:900;cursor:pointer;color-scheme:dark}.reasoning-select[data-mode="master"]{border-color:#59683d;background:#20251b;color:#ddff76}.reasoning-select:focus{border-color:#69737f}.reasoning-select:disabled{opacity:.5;cursor:not-allowed}.composer textarea{flex:1;resize:none;max-height:150px;min-height:31px;border:0;outline:0;background:transparent;color:#fff;padding:6px 0;line-height:1.45;min-width:0}.composer textarea::placeholder{color:#6f7883}.send{flex:0 0 38px;width:38px;height:38px;border:0;border-radius:12px;background:var(--accent);color:#111;font-size:22px;font-weight:900;cursor:pointer}.send:disabled{opacity:.35;cursor:not-allowed}.footer-note{text-align:center;color:#626b76;font-size:9px;margin-top:7px}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.58);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.2s;z-index:40}.overlay.open{opacity:1;pointer-events:auto}.modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-46%);width:min(620px,calc(100% - 30px));background:#15181d;border:1px solid #303640;border-radius:20px;padding:22px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:50}.modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.modal-head{display:flex;justify-content:space-between;gap:20px}.modal h2{font-size:20px;margin:0 0 4px}.modal-head p{margin:0;color:var(--muted);font-size:12px}.privacy-box{margin:18px 0;padding:11px 12px;border-radius:11px;background:#1e2420;color:#cbe6b4;font-size:11px;line-height:1.5;border:1px solid #32402b}.field-label{display:block;font-size:12px;font-weight:800;margin:0 0 7px}.profile-input{width:100%;height:180px;resize:vertical;border:1px solid #323944;border-radius:13px;background:#0f1115;color:#fff;padding:13px;outline:0;line-height:1.55}.profile-input:focus{border-color:#56606c}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.primary,.secondary{height:40px;border-radius:11px;padding:0 16px;font-weight:800;cursor:pointer}.primary{border:0;background:var(--accent);color:#111}.secondary{border:1px solid #343b45;background:#1a1e24;color:#d9dfe5}
 
 .quick-modes{display:flex;gap:6px;overflow-x:auto;padding:0 2px 7px;scrollbar-width:none}.quick-modes::-webkit-scrollbar{display:none}.quick-mode{flex:0 0 auto;border:1px solid #303741;background:#15191e;color:#aeb7c0;border-radius:999px;padding:7px 10px;font-size:10px;font-weight:800;cursor:pointer}.quick-mode.active{background:#242b20;border-color:#5b6b3f;color:#dcff76}.memory-target{width:100%;height:42px;border:1px solid #323944;border-radius:12px;background:#0f1115;color:#fff;padding:0 11px;margin-bottom:10px;outline:none}.memory-hint{font-size:10px;color:#7f8994;margin:-2px 0 10px}.local-badge{color:#c7dda0}.sources .wiki{border-color:#39526a;background:#17222c;color:#cfe8ff}
-@media(max-width:800px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:.22s;box-shadow:30px 0 80px rgba(0,0,0,.45)}.sidebar.open{transform:translateX(0)}.mobile-close,.menu-btn{display:block}.topbar{padding:0 12px}.chat{padding:24px 15px 10px}.composer-wrap{padding-left:12px;padding-right:12px}.reasoning-select{min-width:76px;max-width:82px;padding-left:8px;padding-right:20px;font-size:11px}.hero{min-height:calc(100dvh - 250px)}.hero h1{font-size:28px}.hero p{font-size:13px}.suggestions{grid-template-columns:1fr}.suggestions button:nth-child(n+4){display:none}.bubble{max-width:89%}.top-title b{display:none}.quick-mode{padding:6px 9px;font-size:10px}}
+
+.code-tools{display:none;align-items:center;gap:8px;margin:0 2px 7px}.code-tools.show{display:flex}.code-open-btn{border:1px solid #59683d;background:#20251b;color:#ddff76;border-radius:11px;padding:7px 11px;font-size:10px;font-weight:900;cursor:pointer}.code-tools span{font-size:9px;color:#7f8994}.code-modal{width:min(1120px,calc(100% - 24px));height:min(820px,calc(100dvh - 28px));padding:17px;overflow:hidden}.code-modal.open{display:flex;flex-direction:column}.code-head-actions{display:flex;align-items:center;gap:7px}.code-workspace{min-height:0;flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin-top:13px}.code-pane{min-height:0;border:1px solid #2d343d;border-radius:14px;background:#0f1115;overflow:hidden;display:flex;flex-direction:column}.code-toolbar{height:44px;flex:0 0 44px;display:flex;align-items:center;gap:7px;padding:0 9px;border-bottom:1px solid #282e36;background:#15191e}.code-toolbar strong{font-size:11px;margin-right:auto}.code-lang{height:30px;border:1px solid #343b45;border-radius:9px;background:#20242a;color:#eef1f4;padding:0 8px;font-size:10px;font-weight:800;outline:none}.code-run,.code-small{height:30px;border-radius:9px;padding:0 10px;font-size:10px;font-weight:900;cursor:pointer}.code-run{border:0;background:var(--accent);color:#111}.code-small{border:1px solid #343b45;background:#1a1e24;color:#d9dfe5}.code-editor{flex:1;min-height:0;width:100%;resize:none;border:0;outline:0;background:#0b0d10;color:#eef3f7;padding:13px;font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;tab-size:2}.code-preview{flex:1;min-height:0;width:100%;border:0;background:#fff}.code-console{flex:0 0 105px;max-height:105px;overflow:auto;margin:0;border-top:1px solid #282e36;background:#090b0e;color:#aeb8c2;padding:9px 11px;font:10px/1.45 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;white-space:pre-wrap}.code-console .err{color:#ff9d9d}.code-security{font-size:9px;color:#707985;margin-top:7px}.codeblock-toolbar{display:flex;align-items:center;justify-content:flex-end;gap:5px;margin:9px 0 -8px}.codeblock-toolbar span{margin-right:auto;color:#7f8994;font-size:9px;font-weight:800}.codeblock-btn{height:25px;border:1px solid #343b45;border-radius:8px;background:#171b20;color:#cfd6dd;padding:0 8px;font-size:9px;font-weight:800;cursor:pointer}.codeblock-btn.run{border-color:#59683d;color:#ddff76;background:#20251b}.quick-mode[data-mode="코딩"].active{background:#1a2424;border-color:#49706d;color:#83f0e6}
+@media(max-width:800px){.app-shell{grid-template-columns:1fr}.sidebar{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:.22s;box-shadow:30px 0 80px rgba(0,0,0,.45)}.sidebar.open{transform:translateX(0)}.mobile-close,.menu-btn{display:block}.topbar{padding:0 12px}.chat{padding:24px 15px 10px}.composer-wrap{padding-left:12px;padding-right:12px}.reasoning-select{min-width:76px;max-width:82px;padding-left:8px;padding-right:20px;font-size:11px}.hero{min-height:calc(100dvh - 250px)}.hero h1{font-size:28px}.hero p{font-size:13px}.suggestions{grid-template-columns:1fr}.suggestions button:nth-child(n+4){display:none}.bubble{max-width:89%}.top-title b{display:none}.quick-mode{padding:6px 9px;font-size:10px}.code-workspace{grid-template-columns:1fr;grid-template-rows:minmax(280px,1fr) minmax(280px,1fr)}.code-modal{height:calc(100dvh - 14px);width:calc(100% - 14px);padding:12px}.code-tools span{display:none}}
 .sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.sources a{max-width:230px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none;color:#dce5bd;background:#1c211a;border:1px solid #303a28;border-radius:999px;padding:5px 9px;font-size:10px}.sources a:hover{border-color:#596b45;background:#22291e}
 
 .stream-cursor{display:inline-block;width:7px;height:1.05em;margin-left:2px;vertical-align:-.14em;border-radius:2px;background:var(--accent);animation:streamBlink .85s steps(1,end) infinite}.stream-cursor.done{display:none}@keyframes streamBlink{0%,48%{opacity:1}49%,100%{opacity:.18}}
 .bubble pre{margin:10px 0 2px;padding:12px 13px;border:1px solid #2d343d;border-radius:12px;background:#0b0d10;overflow-x:auto;white-space:pre;line-height:1.5;-webkit-overflow-scrolling:touch}.bubble pre code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px;color:#e8edf2;background:transparent}.bubble code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;background:#20252c;border-radius:5px;padding:1px 4px;font-size:.92em}.stream-error{color:#ffb3b3}.streaming .bubble{contain:layout style}.streaming .text{min-height:1.4em}
 
+/* v7 small UX features */
+.brand-actions{display:flex;align-items:center;gap:3px}.search-icon{font-size:18px}.top-left-actions{display:flex;align-items:center;gap:3px}.mobile-search{display:none}.answer-actions{display:flex;align-items:center;gap:5px;margin-top:7px}.answer-action{height:27px;border:1px solid transparent;border-radius:8px;background:transparent;color:#7f8994;padding:0 8px;font-size:10px;font-weight:800;cursor:pointer}.answer-action:hover{background:#191d22;border-color:#303741;color:#dce2e8}.answer-action.done{color:#cfe986}.preference-row{display:flex;align-items:center;justify-content:flex-end;gap:7px;margin:0 4px 6px}.preference-label{font-size:9px;color:#76808a;font-weight:800}.length-select{height:29px;border:1px solid #303741;border-radius:9px;background:#161a1f;color:#cfd6dd;padding:0 25px 0 9px;font-size:10px;font-weight:800;outline:none;color-scheme:dark}.search-modal{width:min(680px,calc(100% - 24px));max-height:min(700px,calc(100dvh - 32px));overflow:hidden;padding:16px}.search-box{display:flex;align-items:center;gap:9px;border:1px solid #343b45;background:#0f1115;border-radius:13px;padding:0 12px;margin-top:14px}.search-box span{color:#818b95}.search-input{width:100%;height:46px;border:0;outline:0;background:transparent;color:#fff;font-size:14px}.search-input::placeholder{color:#68727d}.search-results{max-height:min(510px,60dvh);overflow-y:auto;margin-top:10px;display:grid;gap:5px;-webkit-overflow-scrolling:touch}.search-empty{text-align:center;color:#79838e;font-size:12px;padding:36px 12px}.search-result{width:100%;border:1px solid transparent;border-radius:12px;background:transparent;color:#e8edf2;text-align:left;padding:11px 12px;cursor:pointer}.search-result:hover{background:#1a1e24;border-color:#2b3139}.search-result strong{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.search-result small{display:block;color:#7f8994;font-size:9px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.search-result mark{background:transparent;color:var(--accent);font-weight:900}.style-select{width:100%;height:42px;border:1px solid #323944;border-radius:12px;background:#0f1115;color:#fff;padding:0 11px;margin-bottom:12px;outline:none;color-scheme:dark}.style-preview{font-size:10px;color:#7f8994;margin:-5px 0 12px}.history-note{font-size:9px;color:#68727d;margin:6px 2px 0}
+@media(max-width:800px){.mobile-search{display:block}.preference-row{justify-content:flex-start;padding-left:2px}.search-modal{width:calc(100% - 14px);max-height:calc(100dvh - 14px)}.answer-action{padding:0 7px}.brand-actions .search-icon{display:block}}
+
+/* v8: share / remember / evidence / projects / attachments */
+.project-chip{display:none;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:9px!important;color:#dce7b5!important;background:#1d2319!important;border:1px solid #39442e;padding:4px 8px!important;border-radius:999px;font-weight:800}.project-chip.show{display:inline-block}
+.side-count{margin-left:auto;min-width:19px;height:19px;padding:0 5px;border-radius:999px;display:grid;place-items:center;background:#262d35;color:#b9c2cb;font-size:9px;font-style:normal}.side-count.hot{background:#2b351c;color:#dfff79}
+.attachment-strip{display:none;gap:7px;overflow-x:auto;padding:0 2px 7px;scrollbar-width:none}.attachment-strip.show{display:flex}.attachment-strip::-webkit-scrollbar{display:none}.attachment-chip{flex:0 0 auto;max-width:230px;height:34px;display:flex;align-items:center;gap:7px;border:1px solid #343b45;border-radius:10px;background:#171b20;padding:0 7px 0 9px;color:#cfd6dd;font-size:10px}.attachment-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.attachment-chip button{border:0;background:transparent;color:#8f99a4;font-size:15px;cursor:pointer;padding:2px}.attachment-thumb{width:23px;height:23px;border-radius:6px;object-fit:cover;background:#252b32}.attach-btn{flex:0 0 38px;width:38px;height:38px;border:1px solid #363d47;border-radius:12px;background:#20242a;color:#d9dee4;font-size:18px;cursor:pointer}.attach-btn:hover{border-color:#596271}.attach-btn:disabled{opacity:.4;cursor:not-allowed}.file-input{display:none}.attach-note{display:none;font-size:9px;color:#7c8792;margin:0 3px 7px}.attach-note.show{display:block}
+.user-actions{display:flex;justify-content:flex-end;gap:5px;margin-top:6px}.user-action{height:24px;border:0;background:transparent;color:#77818c;padding:0 5px;font-size:9px;cursor:pointer}.user-action:hover{color:#d9e0e6}
+.sources{display:none!important}.sources.open{display:flex!important}.evidence-empty{font-size:10px;color:#7d8792;padding:8px 0}.answer-action.active{color:#ddff76;border-color:#59683d;background:#20251b}
+.mini-toast{position:fixed;left:50%;bottom:max(92px,calc(env(safe-area-inset-bottom) + 78px));transform:translate(-50%,12px);z-index:90;background:#20251b;border:1px solid #59683d;color:#ddff76;border-radius:999px;padding:8px 12px;font-size:10px;font-weight:800;opacity:0;pointer-events:none;transition:.18s}.mini-toast.show{opacity:1;transform:translate(-50%,0)}
+.target-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.target-btn{min-height:46px;border:1px solid #343b45;border-radius:12px;background:#171b20;color:#d9dfe5;font-weight:800;cursor:pointer}.target-btn.active{border-color:#697c43;background:#222a1c;color:#e1ff84}.share-preview,.remember-preview{max-height:160px;overflow:auto;border:1px solid #2d343d;border-radius:12px;background:#101318;color:#aeb7c0;padding:11px;font-size:11px;line-height:1.55;white-space:pre-wrap;word-break:break-word}.remember-editor{width:100%;min-height:130px;max-height:220px;resize:vertical;border:1px solid #323944;border-radius:12px;background:#0f1115;color:#fff;padding:11px;outline:0;line-height:1.5}
+.project-modal{width:min(760px,calc(100% - 24px));max-height:calc(100dvh - 28px);overflow:auto}.project-create{display:grid;grid-template-columns:1fr 1.5fr auto;gap:7px;margin:15px 0}.project-input{height:40px;border:1px solid #323944;border-radius:11px;background:#0f1115;color:#fff;padding:0 10px;outline:0}.project-list{display:grid;gap:8px}.project-item{border:1px solid #2e343c;border-radius:13px;background:#111419;padding:11px;display:grid;grid-template-columns:1fr auto;gap:9px;align-items:center}.project-item.active{border-color:#59683d;background:#171d14}.project-item strong{display:block;font-size:12px}.project-item small{display:block;color:#7f8994;font-size:9px;margin-top:3px}.project-actions{display:flex;gap:5px}.project-btn{height:29px;border:1px solid #353d46;border-radius:8px;background:#1a1e24;color:#cfd6dd;padding:0 8px;font-size:9px;font-weight:800;cursor:pointer}.project-btn.use{border-color:#59683d;color:#ddff76}.project-empty{padding:22px;text-align:center;color:#7d8792;font-size:11px}.shared-list{display:grid;gap:8px;max-height:50vh;overflow:auto;margin-top:13px}.shared-item{border:1px solid #303741;border-radius:12px;background:#111419;padding:11px}.shared-item strong{font-size:10px;color:#ddff76}.shared-item p{margin:6px 0 0;color:#c6cdd4;font-size:11px;line-height:1.55;white-space:pre-wrap}.shared-item small{display:block;margin-top:7px;color:#707a85;font-size:9px}
+@media(max-width:800px){.project-create{grid-template-columns:1fr}.target-grid{grid-template-columns:repeat(2,1fr)}.attach-btn{width:36px;flex-basis:36px}.project-chip{max-width:92px}.project-modal{width:calc(100% - 14px)}}
+
 </style>
 </head>
 <body>
+  <!-- FAMILGYM v8: sharing + remember + evidence + family projects + attachments -->
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand-wrap">
@@ -30,7 +48,10 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
           <span class="brand-mark">F</span>
           <span><b>FAMILGYM</b><small>Our Family AI</small></span>
         </button>
-        <button class="icon-btn mobile-close" id="closeSidebar" aria-label="메뉴 닫기">×</button>
+        <div class="brand-actions">
+          <button class="icon-btn search-icon" id="searchChatsBtn" aria-label="대화 검색" title="대화 검색">⌕</button>
+          <button class="icon-btn mobile-close" id="closeSidebar" aria-label="메뉴 닫기">×</button>
+        </div>
       </div>
 
       <button class="new-chat" id="newChatBtn"><span>＋</span> 새 대화</button>
@@ -49,6 +70,8 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
 
       <div class="side-spacer"></div>
 
+      <button class="side-action" id="projectsBtn"><span>📂</span><span>가족 프로젝트</span><i class="side-count" id="projectCount">0</i></button>
+      <button class="side-action" id="sharedBtn"><span>↗️</span><span>가족 공유함</span><i class="side-count" id="sharedCount">0</i></button>
       <button class="side-action" id="familyBtn"><span>👨‍👩‍👧‍👦</span><span>가족 정보</span></button>
       <button class="side-action" id="accuracyBtn"><span>🛡️</span><span>정확도 모드</span><i class="toggle on" id="accuracyToggle"></i></button>
       <div class="status-card" id="statusCard">
@@ -59,10 +82,14 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
 
     <main class="main">
       <header class="topbar">
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
+        <div class="top-left-actions">
+          <button class="icon-btn menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
+          <button class="icon-btn mobile-search" id="mobileSearchBtn" aria-label="대화 검색" title="대화 검색">⌕</button>
+        </div>
         <div class="top-title">
           <b>FAMILGYM</b>
           <span id="memberBadge">가족 공용</span>
+          <span class="project-chip" id="projectChip"></span>
         </div>
         <button class="icon-btn" id="topFamilyBtn" aria-label="가족 정보">⚙</button>
       </header>
@@ -90,7 +117,22 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
           <button type="button" class="quick-mode" data-mode="일정">🗓️ 일정</button>
           <button type="button" class="quick-mode" data-mode="보리">🐶 보리</button>
           <button type="button" class="quick-mode" data-mode="고민상담">💬 고민상담</button>
+          <button type="button" class="quick-mode" data-mode="코딩">💻 코딩</button>
         </div>
+        <div class="code-tools" id="codeTools">
+          <button type="button" class="code-open-btn" id="openCodeRunner">⌨️ 코드 실행기</button>
+          <span>JavaScript · HTML · Three.js를 샌드박스에서 실제 실행</span>
+        </div>
+        <div class="preference-row">
+          <span class="preference-label">답변 길이</span>
+          <select class="length-select" id="responseLength" aria-label="답변 길이">
+            <option value="short">짧게</option>
+            <option value="normal">보통</option>
+            <option value="detail">자세히</option>
+          </select>
+        </div>
+        <div class="attachment-strip" id="attachmentStrip" aria-label="첨부 파일"></div>
+        <div class="attach-note" id="attachNote">사진·PDF·문서·코드 파일 최대 3개 · 각 4MB 이하</div>
         <div class="accuracy-chip" id="accuracyChip">🛡 정확도 모드 ON · 답변 후 한 번 더 검토</div>
         <form class="composer" id="chatForm">
           <label class="sr-only" for="reasoningMode">추론 수준</label>
@@ -98,6 +140,8 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
             <option value="noob">NOOB</option>
             <option value="master">썩은물</option>
           </select>
+          <button type="button" class="attach-btn" id="attachBtn" aria-label="사진 또는 파일 첨부" title="사진·파일 첨부">＋</button>
+          <input class="file-input" id="fileInput" type="file" multiple accept="image/*,.pdf,.txt,.md,.csv,.json,.js,.mjs,.ts,.tsx,.jsx,.html,.css,.py,.java,.c,.cpp,.h,.hpp,.doc,.docx,.ppt,.pptx,.xls,.xlsx" />
           <textarea id="prompt" rows="1" placeholder="패밀짐에게 무엇이든 물어보세요" maxlength="10000"></textarea>
           <button type="submit" class="send" id="sendBtn" aria-label="보내기">↑</button>
         </form>
@@ -123,12 +167,88 @@ button,textarea,select{font:inherit}.sr-only{position:absolute;width:1px;height:
       <option value="전보리">🐶 전보리</option>
     </select>
     <div class="memory-hint" id="memoryHint">가족 모두에게 공통으로 적용할 정보를 적어주세요.</div>
+    <label class="field-label" for="answerStyle">답변 스타일</label>
+    <select class="style-select" id="answerStyle">
+      <option value="natural">자연스럽게</option>
+      <option value="casual">짧고 편하게</option>
+      <option value="core">핵심만</option>
+      <option value="friendly">친근하게</option>
+      <option value="calm">차분하게</option>
+      <option value="detailed">조금 자세히</option>
+    </select>
+    <div class="style-preview" id="stylePreview">가족마다 원하는 말투를 따로 기억해요.</div>
     <label class="field-label" for="familyProfile">패밀짐이 기억할 내용</label>
     <textarea class="profile-input" id="familyProfile" placeholder="예) 우리 가족은 함께 가까운 곳으로 나들이하는 걸 좋아함."></textarea>
     <div class="modal-actions">
       <button class="secondary" id="clearProfile">내용 지우기</button>
       <button class="primary" id="saveProfile">저장하기</button>
     </div>
+  </section>
+
+  <section class="modal search-modal" id="searchModal" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+    <div class="modal-head">
+      <div><h2 id="searchTitle">대화 검색</h2><p>이 기기에 저장된 FAMILGYM 대화를 찾아요.</p></div>
+      <button class="icon-btn" id="closeSearchModal" aria-label="대화 검색 닫기">×</button>
+    </div>
+    <div class="search-box"><span>⌕</span><input class="search-input" id="chatSearchInput" type="search" placeholder="대화 내용 검색" autocomplete="off" /></div>
+    <div class="history-note">대화 기록은 이 브라우저의 로컬 저장소에만 저장돼요.</div>
+    <div class="search-results" id="chatSearchResults"></div>
+  </section>
+
+
+  <section class="modal" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+    <div class="modal-head"><div><h2 id="shareTitle">가족에게 공유</h2><p>이 답변을 패밀짐 가족 공유함에 보내요.</p></div><button class="icon-btn" id="closeShareModal">×</button></div>
+    <div class="target-grid" id="shareTargets"></div>
+    <div class="share-preview" id="sharePreview"></div>
+    <div class="modal-actions"><button class="secondary" id="cancelShareBtn">취소</button><button class="primary" id="confirmShareBtn">공유하기</button></div>
+  </section>
+
+  <section class="modal" id="rememberModal" role="dialog" aria-modal="true" aria-labelledby="rememberTitle">
+    <div class="modal-head"><div><h2 id="rememberTitle">이건 기억해</h2><p>어느 가족 기억에 저장할지 고르고 내용도 다듬을 수 있어요.</p></div><button class="icon-btn" id="closeRememberModal">×</button></div>
+    <label class="field-label" for="rememberTarget">기억 대상</label>
+    <select class="memory-target" id="rememberTarget"></select>
+    <label class="field-label" for="rememberEditor">기억할 내용</label>
+    <textarea class="remember-editor" id="rememberEditor" maxlength="1200"></textarea>
+    <div class="modal-actions"><button class="secondary" id="cancelRememberBtn">취소</button><button class="primary" id="confirmRememberBtn">기억하기</button></div>
+  </section>
+
+  <section class="modal project-modal" id="projectsModal" role="dialog" aria-modal="true" aria-labelledby="projectsTitle">
+    <div class="modal-head"><div><h2 id="projectsTitle">가족 프로젝트</h2><p>여행·공부·게임개발처럼 관련 대화와 맥락을 묶어요.</p></div><button class="icon-btn" id="closeProjectsModal">×</button></div>
+    <div class="project-create"><input class="project-input" id="projectNameInput" maxlength="28" placeholder="프로젝트 이름" /><input class="project-input" id="projectDescInput" maxlength="160" placeholder="AI가 참고할 프로젝트 설명 (선택)" /><button class="primary" id="createProjectBtn">＋ 만들기</button></div>
+    <div class="project-list" id="projectList"></div>
+  </section>
+
+  <section class="modal" id="sharedModal" role="dialog" aria-modal="true" aria-labelledby="sharedTitle">
+    <div class="modal-head"><div><h2 id="sharedTitle">가족 공유함</h2><p>가족에게 공유한 답변을 한곳에서 확인해요.</p></div><button class="icon-btn" id="closeSharedModal">×</button></div>
+    <div class="shared-list" id="sharedList"></div>
+  </section>
+
+  <section class="modal code-modal" id="codeModal" role="dialog" aria-modal="true" aria-labelledby="codeTitle">
+    <div class="modal-head">
+      <div><h2 id="codeTitle">FAMILGYM Code Lab</h2><p>브라우저 안에서 JavaScript와 Three.js를 바로 실행해요.</p></div>
+      <div class="code-head-actions"><button class="icon-btn" id="closeCodeModal" aria-label="코드 실행기 닫기">×</button></div>
+    </div>
+    <div class="code-workspace">
+      <div class="code-pane">
+        <div class="code-toolbar">
+          <strong>CODE</strong>
+          <select class="code-lang" id="codeLanguage" aria-label="실행 언어">
+            <option value="javascript">JavaScript</option>
+            <option value="three">Three.js</option>
+            <option value="html">HTML</option>
+          </select>
+          <button type="button" class="code-small" id="resetCodeBtn">예제</button>
+          <button type="button" class="code-run" id="runCodeBtn">▶ 실행</button>
+        </div>
+        <textarea class="code-editor" id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="코드 편집기"></textarea>
+      </div>
+      <div class="code-pane">
+        <div class="code-toolbar"><strong>PREVIEW</strong><button type="button" class="code-small" id="clearConsoleBtn">콘솔 지우기</button></div>
+        <iframe class="code-preview" id="codePreview" sandbox="allow-scripts" title="코드 실행 결과"></iframe>
+        <pre class="code-console" id="codeConsole">실행 결과와 console.log가 여기에 표시돼.</pre>
+      </div>
+    </div>
+    <div class="code-security">코드는 격리된 iframe에서 실행돼서 패밀짐의 로컬 저장소나 부모 화면에 직접 접근할 수 없어요. Three.js는 CDN을 사용하므로 인터넷 연결이 필요해요.</div>
   </section>
 
   <script>
@@ -148,16 +268,62 @@ function loadProfiles() {
     return Object.fromEntries(MEMBERS.map(m => [m,'']));
   }
 }
+
+const STYLE_IDS = ['natural','casual','core','friendly','calm','detailed'];
+function loadStyles() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('familgym.styles') || '{}');
+    return Object.fromEntries(MEMBERS.map(m => [m, STYLE_IDS.includes(saved[m]) ? saved[m] : 'natural']));
+  } catch {
+    return Object.fromEntries(MEMBERS.map(m => [m,'natural']));
+  }
+}
+function newConversationId() {
+  return (globalThis.crypto?.randomUUID?.() || `fg-${Date.now()}-${Math.random().toString(36).slice(2,8)}`);
+}
+function loadConversations() {
+  try {
+    const rows = JSON.parse(localStorage.getItem('familgym.conversations') || '[]');
+    if (!Array.isArray(rows)) return [];
+    return rows.filter(x => x && typeof x.id === 'string' && Array.isArray(x.messages)).slice(0, 30);
+  } catch { return []; }
+}
+
+function loadProjects() {
+  try {
+    const rows = JSON.parse(localStorage.getItem('familgym.projects') || '[]');
+    return Array.isArray(rows) ? rows.filter(x => x && typeof x.id === 'string' && typeof x.name === 'string').slice(0,20) : [];
+  } catch { return []; }
+}
+function loadSharedItems() {
+  try {
+    const rows = JSON.parse(localStorage.getItem('familgym.sharedItems') || '[]');
+    return Array.isArray(rows) ? rows.filter(x => x && typeof x.id === 'string').slice(0,80) : [];
+  } catch { return []; }
+}
+
 const state = {
   member: MEMBERS.includes(localStorage.getItem('familgym.member')) ? localStorage.getItem('familgym.member') : '가족 공용',
   profiles: loadProfiles(),
+  styles: loadStyles(),
   memoryTarget: '가족 공용',
   quickMode: localStorage.getItem('familgym.quickMode') || '일반',
+  responseLength: ['short','normal','detail'].includes(localStorage.getItem('familgym.responseLength')) ? localStorage.getItem('familgym.responseLength') : 'short',
   accuracyMode: localStorage.getItem('familgym.accuracy') !== 'false',
   reasoningMode: localStorage.getItem('familgym.reasoning') === 'master' ? 'master' : 'noob',
   history: [],
+  conversations: loadConversations(),
+  conversationId: localStorage.getItem('familgym.currentConversationId') || newConversationId(),
   sending: false,
   aiConnected: false,
+  userScrolling: false,
+  attachments: [],
+  projects: loadProjects(),
+  currentProjectId: localStorage.getItem('familgym.currentProjectId') || '',
+  sharedItems: loadSharedItems(),
+  shareTarget: '가족 전체',
+  pendingShareText: '',
+  pendingRememberText: '',
 };
 
 const chat = $('#chat');
@@ -169,14 +335,45 @@ const memberBadge = $('#memberBadge');
 const accuracyToggle = $('#accuracyToggle');
 const accuracyChip = $('#accuracyChip');
 const reasoningMode = $('#reasoningMode');
+const responseLength = $('#responseLength');
 const API_BASE = (window.FAMILGYM_API_BASE || '').replace(/\/$/, '');
 const familyProfile = $('#familyProfile');
 const memoryTarget = $('#memoryTarget');
 const memoryHint = $('#memoryHint');
+const answerStyle = $('#answerStyle');
+const stylePreview = $('#stylePreview');
 const quickModes = $$('.quick-mode');
 const overlay = $('#overlay');
 const modal = $('#familyModal');
+const searchModal = $('#searchModal');
+const chatSearchInput = $('#chatSearchInput');
+const chatSearchResults = $('#chatSearchResults');
+const codeModal = $('#codeModal');
+const codeTools = $('#codeTools');
+const codeEditor = $('#codeEditor');
+const codeLanguage = $('#codeLanguage');
+const codePreview = $('#codePreview');
+const codeConsole = $('#codeConsole');
 const sidebar = $('#sidebar');
+
+const attachBtn = $('#attachBtn');
+const fileInput = $('#fileInput');
+const attachmentStrip = $('#attachmentStrip');
+const attachNote = $('#attachNote');
+const projectChip = $('#projectChip');
+const projectsModal = $('#projectsModal');
+const projectList = $('#projectList');
+const projectNameInput = $('#projectNameInput');
+const projectDescInput = $('#projectDescInput');
+const shareModal = $('#shareModal');
+const shareTargets = $('#shareTargets');
+const sharePreview = $('#sharePreview');
+const rememberModal = $('#rememberModal');
+const rememberTarget = $('#rememberTarget');
+const rememberEditor = $('#rememberEditor');
+const sharedModal = $('#sharedModal');
+const sharedList = $('#sharedList');
+
 
 function escapeHTML(str) {
   return String(str).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
@@ -220,6 +417,238 @@ function formatText(text) {
   return html;
 }
 
+
+function normalizeCodeLang(lang='') {
+  const l = String(lang).toLowerCase().trim();
+  if (['js','javascript','jsx','ts','typescript'].includes(l)) return 'javascript';
+  if (['three','threejs','three.js'].includes(l)) return 'three';
+  if (['html','htm'].includes(l)) return 'html';
+  return '';
+}
+
+function decorateCodeBlocks(root) {
+  if (!root) return;
+  root.querySelectorAll('pre[data-lang]:not([data-enhanced])').forEach(pre => {
+    pre.dataset.enhanced = '1';
+    const langRaw = pre.dataset.lang || '';
+    const lang = normalizeCodeLang(langRaw);
+    const toolbar = document.createElement('div');
+    toolbar.className = 'codeblock-toolbar';
+    const label = document.createElement('span');
+    label.textContent = langRaw || 'code';
+    const copy = document.createElement('button');
+    copy.type = 'button'; copy.className = 'codeblock-btn'; copy.textContent = '복사';
+    copy.addEventListener('click', async () => {
+      const code = pre.querySelector('code')?.textContent || '';
+      try { await navigator.clipboard.writeText(code); copy.textContent = '복사됨'; }
+      catch {
+        const ta = document.createElement('textarea'); ta.value = code; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); copy.textContent = '복사됨'; } catch { copy.textContent = '복사 실패'; }
+        ta.remove();
+      }
+      setTimeout(() => copy.textContent = '복사', 1200);
+    });
+    toolbar.append(label, copy);
+    if (lang) {
+      const run = document.createElement('button');
+      run.type = 'button'; run.className = 'codeblock-btn run'; run.textContent = '▶ 실행';
+      run.addEventListener('click', () => openCodeLab(lang, pre.querySelector('code')?.textContent || ''));
+      toolbar.appendChild(run);
+    }
+    pre.before(toolbar);
+  });
+}
+
+const CODE_EXAMPLES = {
+  javascript: `const app = document.getElementById('app');
+app.innerHTML = '<h1>FAMILGYM JS</h1><button id="btn">눌러봐</button><p id="out"></p>';
+document.getElementById('btn').onclick = () => {
+  document.getElementById('out').textContent = 'JavaScript가 실제로 실행됐어 🚀';
+  console.log('button clicked');
+};`,
+  three: `const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0d0f12);
+const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 100);
+camera.position.set(2.8, 2.0, 4.5);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const light = new THREE.DirectionalLight(0xffffff, 3);
+light.position.set(3, 4, 5);
+scene.add(light, new THREE.AmbientLight(0xffffff, 0.6));
+
+const cube = new THREE.Mesh(
+  new THREE.BoxGeometry(1.4, 1.4, 1.4),
+  new THREE.MeshStandardMaterial({ color: 0xd9ff5b, roughness: 0.35 })
+);
+scene.add(cube);
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+
+addEventListener('resize', () => {
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+});
+
+renderer.setAnimationLoop(() => {
+  cube.rotation.y += 0.008;
+  cube.rotation.x += 0.003;
+  controls.update();
+  renderer.render(scene, camera);
+});
+console.log('Three.js ready', THREE.REVISION);`,
+  html: `<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>body{font-family:-apple-system,sans-serif;background:#111;color:#fff;padding:24px}button{padding:12px 16px}</style></head>
+<body><h1>HTML Preview</h1><button onclick="document.querySelector('p').textContent='실행 완료!'">실행</button><p>버튼을 눌러봐.</p></body>
+</html>`
+};
+
+function openCodeLab(lang='javascript', code='') {
+  closeSidebar(false);
+  modal.classList.remove('open');
+  codeLanguage.value = normalizeCodeLang(lang) || 'javascript';
+  codeEditor.value = code || CODE_EXAMPLES[codeLanguage.value];
+  closeOpenModals();
+  codeModal.classList.add('open');
+  overlay.classList.add('open');
+  codeConsole.textContent = '▶ 실행을 누르면 결과가 표시돼.';
+  setTimeout(() => codeEditor.focus(), 100);
+}
+
+function closeCodeLab() {
+  codeModal.classList.remove('open');
+  codePreview.srcdoc = '';
+  syncOverlay();
+}
+
+function consoleBridge() {
+  return `<script>(function(){const send=(kind,args)=>parent.postMessage({source:'familgym-code',kind,args:args.map(v=>{try{return typeof v==='string'?v:JSON.stringify(v)}catch{return String(v)}})},'*');['log','info','warn','error'].forEach(k=>{const o=console[k];console[k]=(...a)=>{send(k,a);o.apply(console,a)}});addEventListener('error',e=>send('error',[e.message]));addEventListener('unhandledrejection',e=>send('error',[String(e.reason)]));})();<\/script>`;
+}
+
+function buildPlaygroundDocument(lang, code) {
+  const bridge = consoleBridge();
+  if (lang === 'html') {
+    if (/<head[\s>]/i.test(code)) return code.replace(/<head([^>]*)>/i, `<head$1>${bridge}`);
+    return `${bridge}${code}`;
+  }
+  const safeCode = String(code).replace(/<\/script/gi, '<\/script');
+  if (lang === 'three') {
+    return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d0f12}canvas{display:block}</style>${bridge}<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script></head><body><script type="module">import * as THREE from 'three';import { OrbitControls } from 'three/addons/controls/OrbitControls.js';try{${safeCode}}catch(e){console.error(e?.stack||e)}<\/script></body></html>`;
+  }
+  return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;padding:18px;margin:0;color:#111}button{font:inherit}</style>${bridge}</head><body><div id="app"></div><script>try{${safeCode}}catch(e){console.error(e&&e.stack?e.stack:e)}<\/script></body></html>`;
+}
+
+function runCodeLab() {
+  const lang = codeLanguage.value;
+  codeConsole.textContent = `실행 중 · ${lang === 'three' ? 'Three.js CDN 로딩 포함' : lang}`;
+  codePreview.srcdoc = buildPlaygroundDocument(lang, codeEditor.value);
+}
+
+
+function toast(message) {
+  let el = document.getElementById('miniToast');
+  if (!el) { el=document.createElement('div'); el.id='miniToast'; el.className='mini-toast'; document.body.appendChild(el); }
+  el.textContent=message; el.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>el.classList.remove('show'),1500);
+}
+function saveProjects() { try { localStorage.setItem('familgym.projects', JSON.stringify(state.projects.slice(0,20))); } catch {} }
+function saveSharedItems() { try { localStorage.setItem('familgym.sharedItems', JSON.stringify(state.sharedItems.slice(0,80))); } catch {} }
+function activeProject() { return state.projects.find(p => p.id === state.currentProjectId) || null; }
+function projectContext() { const p=activeProject(); return p ? `[가족 프로젝트: ${p.name}]\n${p.description || ''}`.trim() : ''; }
+function projectConversationCount(projectId) { return state.conversations.filter(c => c.projectId === projectId).length + (state.currentProjectId===projectId && state.history.length && !state.conversations.some(c=>c.id===state.conversationId) ? 1 : 0); }
+function updateProjectUI() {
+  const p=activeProject();
+  projectChip.textContent=p ? `📂 ${p.name}` : '';
+  projectChip.classList.toggle('show', Boolean(p));
+  $('#projectCount').textContent=String(state.projects.length);
+  $('#projectCount').classList.toggle('hot', Boolean(p));
+  $('#sharedCount').textContent=String(state.sharedItems.length);
+  $('#sharedCount').classList.toggle('hot', state.sharedItems.length>0);
+}
+function renderProjects() {
+  projectList.innerHTML='';
+  if (!state.projects.length) { projectList.innerHTML='<div class="project-empty">아직 프로젝트가 없어. 위에서 하나 만들어봐.</div>'; return; }
+  state.projects.forEach(p=>{
+    const row=document.createElement('div'); row.className='project-item'+(p.id===state.currentProjectId?' active':'');
+    const info=document.createElement('div');
+    const strong=document.createElement('strong'); strong.textContent=p.name;
+    const small=document.createElement('small'); small.textContent=`${p.description || '설명 없음'} · 대화 ${projectConversationCount(p.id)}개`;
+    info.append(strong,small);
+    const acts=document.createElement('div'); acts.className='project-actions';
+    const use=document.createElement('button'); use.type='button'; use.className='project-btn use'; use.textContent=p.id===state.currentProjectId?'사용 중':'사용';
+    use.addEventListener('click',()=>{ persistCurrentConversation(); state.currentProjectId=p.id; localStorage.setItem('familgym.currentProjectId',p.id); renderProjects(); updateProjectUI(); toast(`${p.name} 프로젝트로 전환했어`); });
+    const off=document.createElement('button'); off.type='button'; off.className='project-btn'; off.textContent='해제'; off.disabled=p.id!==state.currentProjectId;
+    off.addEventListener('click',()=>{ state.currentProjectId=''; localStorage.removeItem('familgym.currentProjectId'); renderProjects(); updateProjectUI(); });
+    const del=document.createElement('button'); del.type='button'; del.className='project-btn'; del.textContent='삭제';
+    del.addEventListener('click',()=>{ if (!confirm(`“${p.name}” 프로젝트만 삭제할까? 대화 자체는 남아.`)) return; state.projects=state.projects.filter(x=>x.id!==p.id); if(state.currentProjectId===p.id){state.currentProjectId='';localStorage.removeItem('familgym.currentProjectId');} state.conversations.forEach(c=>{if(c.projectId===p.id)c.projectId='';}); saveProjects(); saveConversationsList(); renderProjects(); updateProjectUI(); });
+    acts.append(use,off,del); row.append(info,acts); projectList.appendChild(row);
+  });
+}
+function openProjects() { persistCurrentConversation(); closeSidebar(false); closeOpenModals(); projectsModal.classList.add('open'); overlay.classList.add('open'); renderProjects(); setTimeout(()=>projectNameInput.focus(),100); }
+function createProject() {
+  const name=projectNameInput.value.trim(); if(!name){toast('프로젝트 이름을 적어줘');return;}
+  if(state.projects.some(p=>p.name.toLowerCase()===name.toLowerCase())){toast('같은 이름의 프로젝트가 있어');return;}
+  const p={id:newConversationId(),name:name.slice(0,28),description:projectDescInput.value.trim().slice(0,160),createdAt:Date.now()};
+  state.projects.unshift(p); state.projects=state.projects.slice(0,20); state.currentProjectId=p.id; localStorage.setItem('familgym.currentProjectId',p.id); saveProjects(); projectNameInput.value=''; projectDescInput.value=''; renderProjects(); updateProjectUI(); toast('프로젝트 만들었어');
+}
+function openShare(text) {
+  state.pendingShareText=String(text||'').trim().slice(0,6000); if(!state.pendingShareText)return;
+  closeOpenModals(); sharePreview.textContent=state.pendingShareText; renderShareTargets(); shareModal.classList.add('open'); overlay.classList.add('open');
+}
+function renderShareTargets() {
+  const targets=['가족 전체','나','엄마','아빠','누나','전보리']; shareTargets.innerHTML='';
+  targets.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='target-btn'+(t===state.shareTarget?' active':'');b.textContent=t;b.addEventListener('click',()=>{state.shareTarget=t;renderShareTargets();});shareTargets.appendChild(b);});
+}
+function confirmShare() {
+  if(!state.pendingShareText)return;
+  state.sharedItems.unshift({id:newConversationId(),target:state.shareTarget,from:state.member,content:state.pendingShareText,projectId:state.currentProjectId||'',createdAt:Date.now()});
+  state.sharedItems=state.sharedItems.slice(0,80); saveSharedItems(); shareModal.classList.remove('open'); state.pendingShareText=''; updateProjectUI(); syncOverlay(); toast(`${state.shareTarget}에게 공유했어`);
+}
+function renderSharedItems() {
+  sharedList.innerHTML=''; if(!state.sharedItems.length){sharedList.innerHTML='<div class="project-empty">아직 공유한 답변이 없어.</div>';return;}
+  state.sharedItems.forEach(item=>{const d=document.createElement('div');d.className='shared-item';const st=document.createElement('strong');st.textContent=`${item.from||'가족 공용'} → ${item.target||'가족 전체'}`;const p=document.createElement('p');p.textContent=item.content;const sm=document.createElement('small');const proj=state.projects.find(x=>x.id===item.projectId);sm.textContent=`${new Date(item.createdAt).toLocaleString('ko-KR')}${proj?' · 📂 '+proj.name:''}`;d.append(st,p,sm);sharedList.appendChild(d);});
+}
+function openShared() { closeSidebar(false); closeOpenModals(); renderSharedItems(); sharedModal.classList.add('open'); overlay.classList.add('open'); }
+function openRemember(text) {
+  state.pendingRememberText=String(text||'').trim().slice(0,1200); if(!state.pendingRememberText)return;
+  closeOpenModals(); rememberTarget.innerHTML=MEMBERS.map(m=>`<option value="${escapeHTML(m)}">${escapeHTML(m)}</option>`).join(''); rememberTarget.value=state.member; rememberEditor.value=state.pendingRememberText; rememberModal.classList.add('open'); overlay.classList.add('open'); setTimeout(()=>rememberEditor.focus(),80);
+}
+function confirmRemember() {
+  const target=MEMBERS.includes(rememberTarget.value)?rememberTarget.value:'가족 공용'; const text=rememberEditor.value.trim().slice(0,1200); if(!text){toast('기억할 내용을 적어줘');return;}
+  const old=(state.profiles[target]||'').trim(); if(old.includes(text)){toast('이미 기억하고 있어');return;}
+  let next=[old,text].filter(Boolean).join('\n• '); if(next && !next.startsWith('• ')) next='• '+next; if(next.length>12000) next=next.slice(-12000);
+  state.profiles[target]=next; saveProfiles(); rememberModal.classList.remove('open'); state.pendingRememberText=''; syncOverlay(); toast(`${target} 기억에 저장했어`);
+}
+function isTextFile(file) {
+  return file.type.startsWith('text/') || /\.(txt|md|csv|json|js|mjs|ts|tsx|jsx|html|css|py|java|c|cpp|h|hpp)$/i.test(file.name);
+}
+function readAsDataURL(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result||''));r.onerror=()=>reject(r.error||new Error('파일 읽기 실패'));r.readAsDataURL(file);});}
+async function fileToAttachment(file) {
+  if(file.size>4*1024*1024) throw new Error(`${file.name}: 4MB를 넘었어`);
+  if(isTextFile(file)){const text=(await file.text()).slice(0,200000);return {name:file.name,type:file.type||'text/plain',size:file.size,kind:'text',text};}
+  const dataUrl=await readAsDataURL(file); const kind=file.type.startsWith('image/')?'image':'file'; return {name:file.name,type:file.type||'application/octet-stream',size:file.size,kind,dataUrl};
+}
+function attachmentSummary(list=state.attachments){return list.map(a=>`📎 ${a.name}`).join('\n');}
+function renderAttachments() {
+  attachmentStrip.innerHTML=''; attachmentStrip.classList.toggle('show',state.attachments.length>0); attachNote.classList.toggle('show',state.attachments.length>0);
+  state.attachments.forEach((a,i)=>{const c=document.createElement('div');c.className='attachment-chip';if(a.kind==='image'&&a.dataUrl){const img=document.createElement('img');img.className='attachment-thumb';img.src=a.dataUrl;c.appendChild(img);}else{const icon=document.createElement('b');icon.textContent=a.kind==='text'?'⌘':'📄';c.appendChild(icon);}const s=document.createElement('span');s.textContent=a.name;const x=document.createElement('button');x.type='button';x.textContent='×';x.setAttribute('aria-label',`${a.name} 첨부 취소`);x.addEventListener('click',()=>{state.attachments.splice(i,1);renderAttachments();});c.append(s,x);attachmentStrip.appendChild(c);});
+}
+async function addFiles(files) {
+  const room=Math.max(0,3-state.attachments.length); const chosen=[...files].slice(0,room); if(!chosen.length){toast('첨부는 최대 3개야');return;}
+  attachBtn.disabled=true;
+  for(const f of chosen){try{state.attachments.push(await fileToAttachment(f));}catch(e){toast(e.message||'파일을 읽지 못했어');}}
+  attachBtn.disabled=false; fileInput.value=''; renderAttachments();
+}
+function publicAttachmentMeta(list){return list.map(a=>({name:a.name,type:a.type,size:a.size,kind:a.kind}));}
+function closeOpenModals(){ [modal,searchModal,codeModal,shareModal,rememberModal,projectsModal,sharedModal].forEach(m=>m?.classList.remove('open')); if(codePreview)codePreview.srcdoc=''; }
+function anyModalOpen(){return [modal,searchModal,codeModal,shareModal,rememberModal,projectsModal,sharedModal].some(m=>m?.classList.contains('open'));}
+function syncOverlay(){ if(!anyModalOpen()&&!sidebar.classList.contains('open'))overlay.classList.remove('open'); }
+
 function reasoningLabel(mode) {
   return mode === 'master' ? '썩은물' : 'NOOB';
 }
@@ -247,16 +676,188 @@ function memoryPlaceholder(target) {
   return map[target] || '';
 }
 
+function styleLabel(id) {
+  return ({natural:'자연스럽게',casual:'짧고 편하게',core:'핵심만',friendly:'친근하게',calm:'차분하게',detailed:'조금 자세히'})[id] || '자연스럽게';
+}
+
+function combinedStyle(member = state.member) {
+  const common = state.styles['가족 공용'] || 'natural';
+  if (member === '가족 공용') return common;
+  const personal = state.styles[member] || 'natural';
+  return personal !== 'natural' ? personal : common;
+}
+
+function saveStyles() {
+  localStorage.setItem('familgym.styles', JSON.stringify(state.styles));
+}
+
+function lengthInstruction() {
+  if (state.responseLength === 'detail') return '답변 길이는 자세히. 질문 범위 안에서 필요한 이유·예시·주의점을 충분히 설명';
+  if (state.responseLength === 'normal') return '답변 길이는 보통. 핵심 답변 뒤에 필요한 설명만 간단히 추가';
+  return '답변 길이는 짧게. 단순 질문은 1~3문장으로 바로 답하고 요청하지 않은 설명은 생략';
+}
+
+function conversationTitle(history = state.history) {
+  const first = history.find(x => x?.role === 'user' && x.content)?.content || '새 대화';
+  return first.replace(/\s+/g,' ').trim().slice(0, 42) || '새 대화';
+}
+
+function saveConversationsList() {
+  try { localStorage.setItem('familgym.conversations', JSON.stringify(state.conversations.slice(0, 30))); } catch {}
+}
+
+function persistCurrentConversation() {
+  if (!state.history.length) return;
+  const now = Date.now();
+  const row = {
+    id: state.conversationId,
+    title: conversationTitle(),
+    member: state.member,
+    updatedAt: now,
+    projectId: state.currentProjectId || '',
+    messages: state.history.slice(-24).map(x => ({
+      role:x.role,
+      content:String(x.content || '').slice(0,6000),
+      sources:Array.isArray(x.sources)?x.sources.slice(0,4):[],
+      attachments:Array.isArray(x.attachments)?x.attachments.slice(0,3).map(a=>({name:a.name,type:a.type,size:a.size,kind:a.kind})):[]
+    })),
+  };
+  const idx = state.conversations.findIndex(x => x.id === row.id);
+  if (idx >= 0) state.conversations.splice(idx,1);
+  state.conversations.unshift(row);
+  state.conversations = state.conversations.slice(0,30);
+  localStorage.setItem('familgym.currentConversationId', state.conversationId);
+  saveConversationsList();
+}
+
+function snippetForConversation(row, query='') {
+  const text = row.messages.map(x => x.content || '').join(' ').replace(/\s+/g,' ').trim();
+  if (!query) return text.slice(0,90);
+  const low = text.toLowerCase(), q = query.toLowerCase();
+  const i = low.indexOf(q);
+  if (i < 0) return text.slice(0,90);
+  return text.slice(Math.max(0,i-28), i+q.length+58);
+}
+
+function renderSearchResults(query='') {
+  const q = query.trim().toLowerCase();
+  const rows = state.conversations.filter(row => {
+    if (!q) return true;
+    return `${row.title} ${row.member} ${row.messages.map(x=>x.content).join(' ')}`.toLowerCase().includes(q);
+  });
+  chatSearchResults.innerHTML = '';
+  if (!rows.length) {
+    chatSearchResults.innerHTML = `<div class="search-empty">${q ? '찾은 대화가 없어.' : '아직 저장된 대화가 없어.'}</div>`;
+    return;
+  }
+  rows.slice(0,30).forEach(row => {
+    const b = document.createElement('button');
+    b.type='button'; b.className='search-result';
+    const strong=document.createElement('strong'); strong.textContent=row.title || '대화';
+    const small=document.createElement('small');
+    const when = row.updatedAt ? new Date(row.updatedAt).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}) : '';
+    const proj=state.projects.find(p=>p.id===row.projectId);
+    small.textContent = `${row.member || '가족 공용'}${proj?' · 📂 '+proj.name:''} · ${when} · ${snippetForConversation(row, query)}`;
+    b.append(strong,small);
+    b.addEventListener('click',()=>loadConversation(row.id));
+    chatSearchResults.appendChild(b);
+  });
+}
+
+function openSearch() {
+  persistCurrentConversation();
+  closeSidebar(false);
+  closeOpenModals();
+  searchModal.classList.add('open');
+  overlay.classList.add('open');
+  chatSearchInput.value='';
+  renderSearchResults('');
+  setTimeout(()=>chatSearchInput.focus(),100);
+}
+
+function closeSearch() {
+  searchModal.classList.remove('open');
+  syncOverlay();
+}
+
+function renderHistory() {
+  messages.innerHTML='';
+  if (!state.history.length) { hero.style.display='flex'; return; }
+  hero.style.display='none';
+  let lastUser='';
+  for (const item of state.history) {
+    if (item.role === 'user') { lastUser=item.content; addMessage('user', item.content, {attachments:item.attachments||[]}); }
+    else if (item.role === 'assistant') addMessage('assistant', item.content, {reasoningMode:state.reasoningMode,userPrompt:lastUser,sources:item.sources||[]});
+  }
+  requestAnimationFrame(()=>{ chat.scrollTop=chat.scrollHeight; });
+}
+
+function loadConversation(id) {
+  persistCurrentConversation();
+  const row = state.conversations.find(x => x.id === id);
+  if (!row) return;
+  state.conversationId=row.id;
+  localStorage.setItem('familgym.currentConversationId', row.id);
+  state.history=row.messages.map(x=>({role:x.role,content:x.content,sources:Array.isArray(x.sources)?x.sources:[],attachments:Array.isArray(x.attachments)?x.attachments:[]}));
+  state.currentProjectId=state.projects.some(p=>p.id===row.projectId)?row.projectId:'';
+  if(state.currentProjectId)localStorage.setItem('familgym.currentProjectId',state.currentProjectId);else localStorage.removeItem('familgym.currentProjectId');
+  if (MEMBERS.includes(row.member)) state.member=row.member;
+  updateUI();
+  renderHistory();
+  closeSearch();
+}
+
+function attachAnswerActions(wrap, content, userPrompt='', sources=[]) {
+  if (!wrap || wrap.querySelector('.answer-actions')) return;
+  const bubble = wrap.querySelector('.bubble'); if (!bubble) return;
+  const actions=document.createElement('div'); actions.className='answer-actions';
+  const copy=document.createElement('button'); copy.type='button'; copy.className='answer-action'; copy.textContent='⧉ 복사';
+  copy.addEventListener('click', async()=>{
+    const value=String(content||wrap.querySelector('.text')?.textContent||''); let ok=false;
+    try{await navigator.clipboard.writeText(value);ok=true;}catch{}
+    if(!ok){const ta=document.createElement('textarea');ta.value=value;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{ok=document.execCommand('copy');}catch{}ta.remove();}
+    copy.textContent=ok?'✓ 복사됨':'복사 실패'; if(ok)copy.classList.add('done'); setTimeout(()=>{copy.textContent='⧉ 복사';copy.classList.remove('done')},1200);
+  });
+  const regen=document.createElement('button'); regen.type='button'; regen.className='answer-action'; regen.textContent='↻ 다시 답변'; regen.disabled=!userPrompt; regen.addEventListener('click',()=>regenerateAnswer(wrap,userPrompt));
+  const remember=document.createElement('button'); remember.type='button'; remember.className='answer-action'; remember.textContent='🧠 기억'; remember.addEventListener('click',()=>openRemember(String(content||'')));
+  const share=document.createElement('button'); share.type='button'; share.className='answer-action'; share.textContent='↗ 공유'; share.addEventListener('click',()=>openShare(String(content||'')));
+  actions.append(copy,regen,remember,share);
+  const sourceBox=wrap.querySelector('.sources');
+  if(sourceBox || (Array.isArray(sources)&&sources.length)){
+    const evidence=document.createElement('button'); evidence.type='button'; evidence.className='answer-action'; evidence.textContent='🔎 근거';
+    evidence.addEventListener('click',()=>{const box=wrap.querySelector('.sources');if(!box)return;const open=box.classList.toggle('open');evidence.classList.toggle('active',open);evidence.textContent=open?'🔎 근거 닫기':'🔎 근거';});
+    actions.appendChild(evidence);
+  }
+  bubble.appendChild(actions);
+}
+
+async function regenerateAnswer(wrap, userPrompt) {
+  if (!userPrompt || state.sending) return;
+  const assistantNodes=[...messages.querySelectorAll('.message.assistant')];
+  const isLastAssistant=assistantNodes.at(-1)===wrap;
+  const n=state.history.length;
+  const isLastPair=isLastAssistant && n>=2 && state.history[n-1]?.role==='assistant' && state.history[n-2]?.role==='user' && state.history[n-2]?.content===userPrompt;
+  if (isLastPair) {
+    state.history.splice(-2,2);
+    wrap.remove();
+    await sendMessage(userPrompt,{skipUserBubble:true});
+  } else {
+    await sendMessage(userPrompt);
+  }
+}
+
 function quickInstruction() {
   const map = {
-    '일반':'일반적인 가족 AI 비서처럼 답변',
-    '공부':'개념을 단계적으로 쉽게 설명하고 필요하면 예시를 사용',
-    '뭐 먹지':'가족이 함께 먹기 좋은 메뉴를 현실적으로 추천',
-    '일정':'사용자가 준 일정과 할 일을 시간 순서로 깔끔하게 정리',
-    '보리':'강아지 전보리 관련 질문에 반려견 관점의 안전한 일반 정보를 제공',
-    '고민상담':'판단하거나 몰아붙이지 말고 선택지와 다음 행동을 차분하게 정리'
+    '일반':'질문한 것에만 먼저 답하고, 단순 사실 질문은 1~3문장으로 짧고 자연스럽게 답변',
+    '공부':'질문한 개념부터 쉽게 설명하고, 요청하지 않은 주변 지식은 붙이지 않기. 필요할 때만 예시 사용',
+    '뭐 먹지':'가족이 함께 먹기 좋은 메뉴를 현실적으로 짧게 추천하고 선택 이유는 한 줄만 덧붙이기',
+    '일정':'사용자가 준 일정과 할 일만 시간 순서로 깔끔하게 정리',
+    '보리':'강아지 전보리 질문에 필요한 내용만 안전하게 답하고 불필요한 일반론은 생략',
+    '고민상담':'사용자에게 직접 말하듯 자연스럽게, 상황/선택지/다음 행동을 짧고 차분하게 정리',
+    '코딩':'코딩에 최우선 집중. 구현, 디버깅, 성능, 구조, JavaScript, HTML/CSS, Web API, Three.js를 우선 처리. 코드 요청은 설명보다 실행 가능한 완성 코드를 먼저 주고, 기존 코드 수정 요청은 바꿔야 할 부분을 정확히 고치기. 불필요한 생활형 설명이나 가족 관련 잡담은 생략. Three.js 요청은 브라우저에서 바로 실행 가능한 형태를 우선. 버그 수정 요청이면 원인과 수정 내용을 짧게 함께 제시. 답변 길이가 짧게여도 실행에 필요한 코드 자체는 생략하거나 중간에서 자르지 않기'
   };
-  return map[state.quickMode] || map['일반'];
+  const base = map[state.quickMode] || map['일반'];
+  return `${base}. ${lengthInstruction()}. 현재 사용자 답변 스타일: ${styleLabel(combinedStyle())}.`;
 }
 
 function updateUI() {
@@ -265,7 +866,11 @@ function updateUI() {
   accuracyToggle.classList.toggle('on', state.accuracyMode);
   reasoningMode.value = state.reasoningMode;
   reasoningMode.dataset.mode = state.reasoningMode;
+  responseLength.value = state.responseLength;
   quickModes.forEach(b => b.classList.toggle('active', b.dataset.mode === state.quickMode));
+  codeTools.classList.toggle('show', state.quickMode === '코딩');
+  updateProjectUI();
+  prompt.placeholder = state.quickMode === '코딩' ? '코드 생성 · 디버깅 · Three.js · JavaScript' : '패밀짐에게 무엇이든 물어보세요';
   accuracyChip.textContent = state.accuracyMode
     ? (state.aiConnected
       ? `🛡 정확도 모드 ON · ${reasoningLabel(state.reasoningMode)} 추론 · 답변 후 한 번 더 검토`
@@ -302,9 +907,15 @@ function addMessage(role, content, meta = {}) {
       wrap.querySelector('.bubble').appendChild(sourceWrap);
     }
   } else {
-    wrap.innerHTML = `<div class="bubble">${formatText(content)}</div>`;
+    const files = Array.isArray(meta.attachments) && meta.attachments.length ? `<div class="user-files">${meta.attachments.map(a=>`<span>📎 ${escapeHTML(a.name||'파일')}</span>`).join(' ')}</div>` : '';
+    wrap.innerHTML = `<div class="bubble">${formatText(content)}${files}<div class="user-actions"><button type="button" class="user-action remember-user">🧠 기억</button></div></div>`;
+    wrap.querySelector('.remember-user')?.addEventListener('click',()=>openRemember(content));
   }
   messages.appendChild(wrap);
+  if (role === 'assistant') {
+    decorateCodeBlocks(wrap);
+    attachAnswerActions(wrap, content, meta.userPrompt || '', meta.sources || []);
+  }
   chat.scrollTop = chat.scrollHeight;
   return wrap;
 }
@@ -325,8 +936,14 @@ function shouldStickToBottom() {
 }
 
 function scrollChat(force = false) {
+  // 사용자가 손가락으로 과거 대화를 보고 있을 때 스트리밍이 강제로 맨 아래로 끌어내리지 않게 함.
+  if (state.userScrolling && !force) return;
   if (force || shouldStickToBottom()) chat.scrollTop = chat.scrollHeight;
 }
+
+chat.addEventListener('touchstart', () => { state.userScrolling = true; }, { passive: true });
+chat.addEventListener('touchend', () => { setTimeout(() => { state.userScrolling = false; }, 220); }, { passive: true });
+chat.addEventListener('touchcancel', () => { state.userScrolling = false; }, { passive: true });
 
 function createStreamingMessage() {
   hero.style.display = 'none';
@@ -343,6 +960,7 @@ function createStreamingMessage() {
     hasDelta: false,
     raf: 0,
     sources: [],
+    userPrompt: '',
   };
 }
 
@@ -399,6 +1017,8 @@ function finalizeStreamingMessage(streamMsg, meta = {}) {
   streamMsg.textEl.innerHTML = formatText(streamMsg.text);
   attachSources(streamMsg, meta.sources || streamMsg.sources);
   renderMeta(streamMsg, meta);
+  decorateCodeBlocks(streamMsg.wrap);
+  attachAnswerActions(streamMsg.wrap, streamMsg.text, meta.userPrompt || '', meta.sources || streamMsg.sources || []);
   scrollChat();
 }
 
@@ -413,6 +1033,8 @@ function markStreamError(streamMsg, message) {
     streamMsg.textEl.innerHTML = formatText(streamMsg.text);
   }
   renderMeta(streamMsg, { error: true, reasoningMode: state.reasoningMode });
+  decorateCodeBlocks(streamMsg.wrap);
+  attachAnswerActions(streamMsg.wrap, streamMsg.text, streamMsg.userPrompt || '', streamMsg.sources || []);
   scrollChat();
 }
 
@@ -433,7 +1055,7 @@ async function consumeEventStream(response, onEvent) {
       const data = raw.split(/\r?\n/)
         .filter(line => line.startsWith('data:'))
         .map(line => line.slice(5).trimStart())
-        .join('\\n');
+        .join('\n');
       if (!data) continue;
       let event;
       try { event = JSON.parse(data); }
@@ -462,22 +1084,88 @@ function stripWikiHtml(s) {
   return String(s || '').replace(/<[^>]+>/g,'').replace(/\s+/g,' ').trim();
 }
 
+function splitSentences(text) {
+  return String(text || '')
+    .replace(/\s+/g, ' ')
+    .split(/(?<=[.!?。！？])\s+/)
+    .map(x => x.trim())
+    .filter(Boolean);
+}
+
+function questionKeywords(text) {
+  const stop = new Set(['알려줘','설명해줘','뭐야','무엇이야','누구야','어디야','몇','얼마','현재','지금','대한','대해','좀','해줘']);
+  return String(text || '')
+    .replace(/[?？!！.,()\[\]{}]/g, ' ')
+    .split(/\s+/)
+    .map(x => x.trim())
+    .filter(x => x.length >= 2 && !stop.has(x));
+}
+
+function populationAnswer(title, extract) {
+  const compact = String(extract || '').replace(/\s+/g, ' ');
+  const sentences = splitSentences(compact);
+  const candidates = sentences.filter(s => /인구/.test(s) && /명/.test(s));
+  const source = candidates.find(s => /20\d{2}년/.test(s)) || candidates[0] || '';
+  if (!source) return '';
+  const year = source.match(/20\d{2}년(?:\s*기준)?/);
+  const nums = [...source.matchAll(/(?:약\s*)?[0-9][0-9,.\s]*(?:억|만|천)?\s*명/g)].map(m => m[0].replace(/\s+/g,' '));
+  if (!nums.length) return '';
+  const value = nums[0];
+  const when = year ? `${year[0].replace(/\s+/g,' ')} ` : '';
+  return `**${title} 인구는 ${when}${value} 정도야.**`;
+}
+
+function conciseWikiSnippet(question, title, extract) {
+  const q = String(question || '').toLowerCase();
+  if (/(인구|몇\s*명|사람\s*수)/.test(q)) {
+    const pop = populationAnswer(title, extract);
+    if (pop) return pop;
+  }
+
+  const sentences = splitSentences(extract);
+  if (!sentences.length) return '';
+  const keywords = questionKeywords(question);
+  const ranked = sentences.map((sentence, index) => {
+    const low = sentence.toLowerCase();
+    const score = keywords.reduce((n, k) => n + (low.includes(k.toLowerCase()) ? 3 : 0), 0)
+      + (/\d/.test(question) && /\d/.test(sentence) ? 1 : 0)
+      - Math.max(0, sentence.length - 220) / 90;
+    return { sentence, index, score };
+  }).sort((a,b) => b.score - a.score || a.index - b.index);
+
+  const best = ranked[0]?.sentence || sentences[0];
+  const picked = [best];
+  const extraCount = state.responseLength === 'detail' ? 3 : state.responseLength === 'normal' ? 1 : 0;
+  for (let step = 1; step <= extraCount; step++) {
+    const next = sentences[(ranked[0]?.index || 0) + step];
+    if (next && !picked.includes(next)) picked.push(next);
+  }
+  let out = picked.join(' ');
+  const maxLen = state.responseLength === 'detail' ? 900 : state.responseLength === 'normal' ? 480 : 260;
+  if (out.length > maxLen) out = out.slice(0, maxLen - 1).trimEnd() + '…';
+  return `응, **${title}**에 대해 질문한 부분만 말하면 ${out}`;
+}
+
 async function wikiFallback(text) {
   const q = text.replace(/[?？]/g,' ').replace(/알려줘|설명해줘|뭐야|무엇이야|누구야|어디야|뜻이야/g,' ').trim();
   if (q.length < 2 || q.length > 80) return null;
   const url = 'https://ko.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=' + encodeURIComponent(q) + '&gsrlimit=1&prop=extracts|info&exintro=1&explaintext=1&inprop=url&format=json&origin=*';
   try {
-    const r = await fetch(url, {signal: AbortSignal.timeout ? AbortSignal.timeout(4500) : undefined});
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 4500);
+    const r = await fetch(url, {signal: controller.signal});
+    clearTimeout(timer);
     if (!r.ok) return null;
     const d = await r.json();
     const pages = d?.query?.pages ? Object.values(d.query.pages) : [];
     const p = pages[0];
     const extract = stripWikiHtml(p?.extract);
     if (!extract || extract.length < 30) return null;
-    return {answer: `**${p.title}**\n${extract.slice(0, 700)}${extract.length > 700 ? '…' : ''}`, sources:[{title:'위키백과: '+p.title,url:p.fullurl}], verified:false};
+    const answer = conciseWikiSnippet(text, p.title, extract);
+    if (!answer) return null;
+    return {answer, sources:[{title:'위키백과: '+p.title,url:p.fullurl}], verified:false};
   } catch { return null; }
 }
-
 function modeFallback(text) {
   const q = text.trim();
   const profile = combinedProfile();
@@ -491,12 +1179,14 @@ function modeFallback(text) {
   if (state.quickMode === '일정') return `일정 모드야. 지금 질문에서 시간표로 만들 정보가 충분하지 않아. **시간 + 할 일** 형태로 보내주면 겹치는 일정까지 확인해서 순서대로 정리해줄게.`;
   if (state.quickMode === '보리') return `🐶 보리 모드야. 보리의 **나이, 체중, 지금 궁금한 행동/먹은 것/산책 상황**을 알려주면 일반적인 반려견 정보 범위에서 정리해줄게. 응급 증상이나 치료 판단은 동물병원 확인이 필요해.`;
   if (state.quickMode === '고민상담') return `네가 말한 내용을 기준으로 **상황 / 선택지 / 지금 할 수 있는 한 가지** 순서로 정리해줄 수 있어. 무슨 일이 있었는지 편하게 적어줘.`;
-  if (profile) return `지금은 생성형 AI 서버가 연결되기 전이라 이 질문을 완전한 AI 답변으로 만들 수는 없어. 대신 **${state.member} 기억**은 저장되어 있고, 계산·시간·기초 지식 검색은 바로 처리할 수 있어.`;
-  return `이 질문은 로컬 기능만으로 정확한 답을 만들기 어려워. **실제 AI 서버가 연결되면 정상 답변**이 가능해. 지금도 계산, 현재 시간/날짜, 간단한 백과사전형 질문은 처리할 수 있어.`;
+  if (state.quickMode === '코딩') return `💻 **코딩 모드**야. 코드 실행기는 지금 바로 쓸 수 있어. AI 코드 생성·디버깅은 AI 서버가 연결되면 코딩 전용 지침으로 처리돼. 아래 **코드 실행기**에서 JavaScript·HTML·Three.js는 실제로 실행할 수 있어.`;
+  if (profile) return `이건 지금 로컬 모드만으로 정확하게 답하기 어려워. **${state.member} 기억**은 그대로 저장돼 있어.`;
+  return `이건 지금 로컬 모드만으로 정확하게 답하기 어려워. AI 서버가 연결되면 바로 제대로 답해줄게.`;
 }
 
-async function localPreviewAnswer(text) {
+async function localPreviewAnswer(text, attachments=[]) {
   const q = text.trim().toLowerCase();
+  if (attachments.length) return {answer:`첨부한 **${attachments.map(a=>a.name).join(', ')}** 파일은 준비됐어. 사진·PDF·문서 내용을 실제로 분석하려면 AI 서버 연결이 필요해.`, local:true};
   if (q.includes('안녕')) return {answer:`안녕! ${state.member === '가족 공용' ? '우리 가족' : state.member} 👋 나는 패밀짐이야.`, local:true};
   if ((q.includes('누구') && q.includes('너')) || q.includes('패밀짐')) return {answer:'나는 **FAMILGYM(패밀짐)**이야. 가족별 기억과 빠른 모드를 사용하는 우리 가족용 AI 웹앱이야.', local:true};
   const calc = safeCalculate(q);
@@ -515,7 +1205,7 @@ async function localPreviewAnswer(text) {
   return {answer:modeFallback(text), local:true};
 }
 
-async function requestNonStreamingFallback(text) {
+async function requestNonStreamingFallback(text, attachments=[]) {
   const response = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
     headers: {'Content-Type':'application/json'},
@@ -525,8 +1215,12 @@ async function requestNonStreamingFallback(text) {
       familyProfile: combinedProfile(),
       quickMode: state.quickMode,
       quickInstruction: quickInstruction(),
+      responseLength: state.responseLength,
+      answerStyle: styleLabel(combinedStyle()),
       accuracyMode: state.accuracyMode,
       reasoningMode: state.reasoningMode,
+      projectContext: projectContext(),
+      attachments,
       history: state.history.slice(-12),
     }),
   });
@@ -535,21 +1229,26 @@ async function requestNonStreamingFallback(text) {
   return data;
 }
 
-async function sendMessage(text) {
+async function sendMessage(text, options = {}) {
   text = text.trim();
+  const sentAttachments = options.reuseAttachments || [...state.attachments];
+  if (!text && sentAttachments.length) text = '첨부한 파일을 확인해줘.';
   if (!text || state.sending) return;
   state.sending = true;
   sendBtn.disabled = true;
   reasoningMode.disabled = true;
   prompt.value = '';
+  state.attachments = [];
+  renderAttachments();
   autoResize();
 
-  addMessage('user', text);
+  if (!options.skipUserBubble) addMessage('user', text, {attachments: publicAttachmentMeta(sentAttachments)});
   let streamMsg = null;
 
   try {
     if (!API_BASE) throw new Error('LOCAL_MODE');
     streamMsg = createStreamingMessage();
+    streamMsg.userPrompt = text;
     const response = await fetch(`${API_BASE}/api/chat/stream`, {
       method: 'POST',
       headers: {'Content-Type':'application/json', 'Accept':'text/event-stream'},
@@ -559,6 +1258,10 @@ async function sendMessage(text) {
         familyProfile: combinedProfile(),
         quickMode: state.quickMode,
         quickInstruction: quickInstruction(),
+        responseLength: state.responseLength,
+        answerStyle: styleLabel(combinedStyle()),
+        projectContext: projectContext(),
+        attachments: sentAttachments,
         accuracyMode: state.accuracyMode,
         reasoningMode: state.reasoningMode,
         history: state.history.slice(-12),
@@ -574,15 +1277,17 @@ async function sendMessage(text) {
     if (!response.body || typeof response.body.getReader !== 'function') {
       streamMsg.wrap.remove();
       streamMsg = null;
-      const data = await requestNonStreamingFallback(text);
+      const data = await requestNonStreamingFallback(text, sentAttachments);
       addMessage('assistant', data.answer || '답변이 비어 있어요.', {
         verified: data.verified,
         demo: data.demo,
         sources: data.sources || [],
         reasoningMode: data.reasoningMode || state.reasoningMode,
+        userPrompt: text,
       });
-      state.history.push({ role:'user', content:text }, { role:'assistant', content:data.answer || '' });
-      state.history = state.history.slice(-16);
+      state.history.push({ role:'user', content:text, attachments:publicAttachmentMeta(sentAttachments) }, { role:'assistant', content:data.answer || '', sources:data.sources || [] });
+      state.history = state.history.slice(-24);
+      persistCurrentConversation();
       return;
     }
 
@@ -611,8 +1316,9 @@ async function sendMessage(text) {
     if (streamError) {
       if (!streamMsg.hasDelta) throw new Error(streamError);
       markStreamError(streamMsg, streamError);
-      state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
-      state.history = state.history.slice(-16);
+      state.history.push({ role:'user', content:text, attachments:publicAttachmentMeta(sentAttachments) }, { role:'assistant', content:streamMsg.text, sources:streamMsg.sources || [] });
+      state.history = state.history.slice(-24);
+      persistCurrentConversation();
       return;
     }
 
@@ -622,23 +1328,27 @@ async function sendMessage(text) {
       verificationError: Boolean(finalMeta.verificationError),
       sources: finalMeta.sources || [],
       reasoningMode: finalMeta.reasoningMode || state.reasoningMode,
+      userPrompt: text,
     });
-    state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
-    state.history = state.history.slice(-16);
+    state.history.push({ role:'user', content:text, attachments:publicAttachmentMeta(sentAttachments) }, { role:'assistant', content:streamMsg.text, sources:finalMeta.sources || streamMsg.sources || [] });
+    state.history = state.history.slice(-24);
+    persistCurrentConversation();
   } catch (err) {
     if (streamMsg?.hasDelta) {
       markStreamError(streamMsg, err?.message || '스트리밍이 중단됐어요.');
-      state.history.push({ role:'user', content:text }, { role:'assistant', content:streamMsg.text });
-      state.history = state.history.slice(-16);
+      state.history.push({ role:'user', content:text, attachments:publicAttachmentMeta(sentAttachments) }, { role:'assistant', content:streamMsg.text, sources:streamMsg.sources || [] });
+      state.history = state.history.slice(-24);
+      persistCurrentConversation();
     } else {
       if (streamMsg?.wrap?.isConnected) streamMsg.wrap.remove();
       const typing = addTyping();
-      const fallback = await localPreviewAnswer(text);
+      const fallback = await localPreviewAnswer(text, sentAttachments);
       typing.remove();
       const answer = fallback.answer;
-      addMessage('assistant', answer, { local: true, sources: fallback.sources || [], reasoningMode: state.reasoningMode });
-      state.history.push({ role:'user', content:text }, { role:'assistant', content:answer });
-      state.history = state.history.slice(-16);
+      addMessage('assistant', answer, { local: true, sources: fallback.sources || [], reasoningMode: state.reasoningMode, userPrompt: text });
+      state.history.push({ role:'user', content:text, attachments:publicAttachmentMeta(sentAttachments) }, { role:'assistant', content:answer, sources:fallback.sources || [] });
+      state.history = state.history.slice(-24);
+      persistCurrentConversation();
     }
   } finally {
     state.sending = false;
@@ -649,10 +1359,15 @@ async function sendMessage(text) {
 }
 
 function resetChat() {
+  persistCurrentConversation();
+  state.conversationId = newConversationId();
+  localStorage.setItem('familgym.currentConversationId', state.conversationId);
   state.history = [];
   messages.innerHTML = '';
   hero.style.display = 'flex';
   prompt.value = '';
+  state.attachments=[];
+  renderAttachments();
   autoResize();
   closeSidebar();
 }
@@ -661,6 +1376,8 @@ function loadMemoryEditor(target = state.memoryTarget) {
   state.memoryTarget = MEMBERS.includes(target) ? target : '가족 공용';
   memoryTarget.value = state.memoryTarget;
   familyProfile.value = state.profiles[state.memoryTarget] || '';
+  answerStyle.value = state.styles[state.memoryTarget] || 'natural';
+  stylePreview.textContent = `${state.memoryTarget} 답변 스타일: ${styleLabel(answerStyle.value)}`;
   familyProfile.placeholder = memoryPlaceholder(state.memoryTarget);
   memoryHint.textContent = state.memoryTarget === '가족 공용'
     ? '가족 모두에게 공통으로 적용할 정보를 적어주세요.'
@@ -670,6 +1387,7 @@ function loadMemoryEditor(target = state.memoryTarget) {
 function openFamily() {
   closeSidebar(false);
   loadMemoryEditor(state.member === '가족 공용' ? '가족 공용' : state.member);
+  closeOpenModals();
   modal.classList.add('open');
   overlay.classList.add('open');
   setTimeout(() => familyProfile.focus(), 120);
@@ -677,12 +1395,12 @@ function openFamily() {
 
 function closeFamily() {
   modal.classList.remove('open');
-  if (!sidebar.classList.contains('open')) overlay.classList.remove('open');
+  syncOverlay();
 }
 
 function closeSidebar(updateOverlay = true) {
   sidebar.classList.remove('open');
-  if (updateOverlay && !modal.classList.contains('open')) overlay.classList.remove('open');
+  if (updateOverlay) syncOverlay();
 }
 
 $('#chatForm').addEventListener('submit', e => { e.preventDefault(); sendMessage(prompt.value); });
@@ -705,7 +1423,68 @@ quickModes.forEach(b => b.addEventListener('click', () => {
   updateUI();
 }));
 
+$('#openCodeRunner').addEventListener('click', () => openCodeLab('javascript'));
+$('#closeCodeModal').addEventListener('click', closeCodeLab);
+$('#runCodeBtn').addEventListener('click', runCodeLab);
+$('#resetCodeBtn').addEventListener('click', () => {
+  codeEditor.value = CODE_EXAMPLES[codeLanguage.value] || CODE_EXAMPLES.javascript;
+  codeConsole.textContent = '예제 코드를 불러왔어.';
+});
+$('#clearConsoleBtn').addEventListener('click', () => { codeConsole.textContent = ''; });
+codeLanguage.addEventListener('change', () => {
+  codeEditor.value = CODE_EXAMPLES[codeLanguage.value] || CODE_EXAMPLES.javascript;
+  codeConsole.textContent = `${codeLanguage.options[codeLanguage.selectedIndex].text} 예제를 불러왔어.`;
+});
+codeEditor.addEventListener('keydown', e => {
+  if (e.key === 'Tab') {
+    e.preventDefault();
+    const a = codeEditor.selectionStart, b = codeEditor.selectionEnd;
+    codeEditor.setRangeText('  ', a, b, 'end');
+  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); runCodeLab(); }
+});
+window.addEventListener('message', e => {
+  if (e.source !== codePreview.contentWindow || e.data?.source !== 'familgym-code') return;
+  const prefix = e.data.kind === 'error' ? '❌ ' : e.data.kind === 'warn' ? '⚠️ ' : '› ';
+  const line = prefix + (Array.isArray(e.data.args) ? e.data.args.join(' ') : '');
+  codeConsole.textContent = (codeConsole.textContent && !codeConsole.textContent.startsWith('실행 중') ? codeConsole.textContent + '\n' : '') + line;
+  codeConsole.scrollTop = codeConsole.scrollHeight;
+});
+
+
+attachBtn.addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',()=>addFiles(fileInput.files || []));
+$('#projectsBtn').addEventListener('click',openProjects);
+$('#sharedBtn').addEventListener('click',openShared);
+$('#closeProjectsModal').addEventListener('click',()=>{projectsModal.classList.remove('open');syncOverlay();});
+$('#createProjectBtn').addEventListener('click',createProject);
+projectNameInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();createProject();}});
+$('#closeShareModal').addEventListener('click',()=>{shareModal.classList.remove('open');syncOverlay();});
+$('#cancelShareBtn').addEventListener('click',()=>{shareModal.classList.remove('open');syncOverlay();});
+$('#confirmShareBtn').addEventListener('click',confirmShare);
+$('#closeRememberModal').addEventListener('click',()=>{rememberModal.classList.remove('open');syncOverlay();});
+$('#cancelRememberBtn').addEventListener('click',()=>{rememberModal.classList.remove('open');syncOverlay();});
+$('#confirmRememberBtn').addEventListener('click',confirmRemember);
+$('#closeSharedModal').addEventListener('click',()=>{sharedModal.classList.remove('open');syncOverlay();});
+
 memoryTarget.addEventListener('change', () => loadMemoryEditor(memoryTarget.value));
+
+responseLength.addEventListener('change', () => {
+  state.responseLength = ['short','normal','detail'].includes(responseLength.value) ? responseLength.value : 'short';
+  localStorage.setItem('familgym.responseLength', state.responseLength);
+  updateUI();
+});
+
+answerStyle.addEventListener('change', () => {
+  state.styles[state.memoryTarget] = STYLE_IDS.includes(answerStyle.value) ? answerStyle.value : 'natural';
+  saveStyles();
+  stylePreview.textContent = `${state.memoryTarget} 답변 스타일: ${styleLabel(answerStyle.value)}`;
+});
+
+$('#searchChatsBtn').addEventListener('click', openSearch);
+$('#mobileSearchBtn').addEventListener('click', openSearch);
+$('#closeSearchModal').addEventListener('click', closeSearch);
+chatSearchInput.addEventListener('input', () => renderSearchResults(chatSearchInput.value));
 
 reasoningMode.addEventListener('change', () => {
   state.reasoningMode = reasoningMode.value === 'master' ? 'master' : 'noob';
@@ -724,13 +1503,15 @@ $('#familyBtn').addEventListener('click', openFamily);
 $('#topFamilyBtn').addEventListener('click', openFamily);
 $('#closeModal').addEventListener('click', closeFamily);
 overlay.addEventListener('click', () => {
-  modal.classList.remove('open');
+  closeOpenModals();
   sidebar.classList.remove('open');
   overlay.classList.remove('open');
 });
 $('#saveProfile').addEventListener('click', () => {
   state.profiles[state.memoryTarget] = familyProfile.value.trim();
+  state.styles[state.memoryTarget] = STYLE_IDS.includes(answerStyle.value) ? answerStyle.value : 'natural';
   saveProfiles();
+  saveStyles();
   closeFamily();
 });
 $('#clearProfile').addEventListener('click', () => {
@@ -746,7 +1527,13 @@ $('#closeSidebar').addEventListener('click', () => closeSidebar());
 
 document.addEventListener('keydown', e => {
   if (e.key !== 'Escape') return;
-  if (modal.classList.contains('open')) closeFamily();
+  if (codeModal.classList.contains('open')) closeCodeLab();
+  else if (shareModal.classList.contains('open')) { shareModal.classList.remove('open'); syncOverlay(); }
+  else if (rememberModal.classList.contains('open')) { rememberModal.classList.remove('open'); syncOverlay(); }
+  else if (projectsModal.classList.contains('open')) { projectsModal.classList.remove('open'); syncOverlay(); }
+  else if (sharedModal.classList.contains('open')) { sharedModal.classList.remove('open'); syncOverlay(); }
+  else if (searchModal.classList.contains('open')) closeSearch();
+  else if (modal.classList.contains('open')) closeFamily();
   else if (sidebar.classList.contains('open')) closeSidebar();
 });
 
@@ -775,8 +1562,18 @@ async function checkStatus() {
   }
 }
 
+localStorage.setItem('familgym.currentConversationId', state.conversationId);
+window.addEventListener('pagehide', persistCurrentConversation);
+const resumeConversation = state.conversations.find(x => x.id === state.conversationId);
+if (resumeConversation?.messages?.length) {
+  state.history = resumeConversation.messages.map(x => ({role:x.role, content:x.content}));
+  if (MEMBERS.includes(resumeConversation.member)) state.member = resumeConversation.member;
+  if (state.projects.some(p=>p.id===resumeConversation.projectId)) state.currentProjectId=resumeConversation.projectId;
+}
 updateUI();
+renderAttachments();
 autoResize();
+if (state.history.length) renderHistory();
 checkStatus();
 
 </script>
